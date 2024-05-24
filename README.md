@@ -29,3 +29,16 @@ Diagramas de las dos principales opciones del programa; atención a clientes y o
 <img src="Images/AtencionClientes.png" alt="AtencionClientes" width="500"/>
 
 <img src="Images/InfoGeneral.png" alt="InfoGeneral" width="500"/>
+
+
+#### Informacion teorica
+
+- ¿Para qué sirve un sistema de gestión bancaria?
+- ¿Qué es un préstamo, prendario e hipotecario?
+- ¿Qué son cuotas y tasas de interés?
+- ¿Qué es una cuenta que gestiona ahorros?
+- ¿Qué es un certificado de depósito a plazo?
+- ¿Qué es un depósito, retiro, transferencia, abonos?
+- ¿Qué es una transacción?
+- ¿Qué es un reporte de préstamos? ¿Qué son aporte al capital y los intereses abonados?
+- ¿Qué es una tasa de interés en periodo en meses y cuota mensual?
