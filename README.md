@@ -1,8 +1,5 @@
 # Información teórica
 
-
-## Aspectos generales del proyecto
-
 ### Título: Sistema de gestión bancaria
 
 #### Resumen de requisitos
@@ -81,3 +78,11 @@ El aporte al capital es el abono que se realiza en un prestamo para la reduccion
 
 Los intereses abonados es el abono que se realiza en un prestamo para la reduccion de la tasa de interes generada de la deuda.
 
+#### Esquema de base de datos
+
+Para el esquema de la base de datos se utiliza un esquema de cinco tablas. La primera tabla llamada 'Clientes' se utilizara para almacenar el ID unico de cada cliente, el nombre y el ID de las cuentas de la tabla 'Cuentas'.
+
+La tabla 'Cuentas' posee un ID identificador unico de la tabla
+
+
+<img src="Images/EsquemaBaseDatos.png" alt="EsquemaBaseDatos" width="700"/>
