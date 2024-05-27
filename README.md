@@ -71,9 +71,11 @@ Los intereses abonados es el abono que se realiza en un prestamo para la reducci
 
 ## 3. Arquitectura
 En la siguiente figura se exhibe el diagrama de flujo general que describe de manera bidireccional el comportamiento del flujo de información para el Sistema de Gestión Bancaria.
+
 <img src="Images/Arquitectura1.png" alt="Arquitectura1" width="500"/>
 
 Se puede observar un diagrama de bloques que describe de manera general la arquitectura propuesta para el software del programa.
+
 <img src="Images/AtencionClientes.png" alt="AtencionClientes" width="500"/>
 
 <img src="Images/InfoGeneral.png" alt="InfoGeneral" width="500"/>
