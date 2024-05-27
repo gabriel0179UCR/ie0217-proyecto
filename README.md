@@ -71,6 +71,8 @@ Los intereses abonados es el abono que se realiza en un prestamo para la reducci
 
 ## 3. Arquitectura
 
+<img src="Images/Diagrama flujo.png" alt="Arquitectura1" width="500"/>
+
 <img src="Images/Arquitectura1.png" alt="Arquitectura1" width="500"/>
 
 
