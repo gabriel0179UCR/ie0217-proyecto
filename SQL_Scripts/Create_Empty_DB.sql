@@ -17,7 +17,7 @@ CREATE TABLE Cuentas (
 	ClientesID INT,
     DenominacionID INT NOT NULL,
     Cantidad FLOAT,
-    FechaCreacion DATETIME,
+    FechaCreacion DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (ClientesID) REFERENCES Clientes(ID), 
     FOREIGN KEY (DenominacionID) REFERENCES Denominaciones(ID)
 );
@@ -33,7 +33,7 @@ CREATE TABLE PrestamosClientes (
     MontoTotal FLOAT NOT NULL,
     TotalAbonado FLOAT,
     MontoFaltante FLOAT NOT NULL,
-    FechaCreacion DATETIME NOT NULL,
+    FechaCreacion DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FechaFinalizacion DATETIME NOT NULL,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ID),
     FOREIGN KEY (TipoPrestamoID) REFERENCES TipoPrestamos(ID),
@@ -47,7 +47,7 @@ CREATE TABLE CDPs (
     DenominacionID INT NOT NULL,
     TiempoTotal FLOAT NOT NULL,
     Interes FLOAT NOT NULL,
-    FechaIngreso DATETIME NOT NULL,
+    FechaIngreso DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FechaExpiracion DATETIME NOT NULL,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ID),
     FOREIGN KEY (DenominacionID) REFERENCES Denominaciones(ID)
