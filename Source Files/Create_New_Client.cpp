@@ -31,12 +31,12 @@ static int callback(void *data, int argc, char **argv, char **azColName) {
   return 0;
 }
 
-void createNewClient(sqlite3 *db) {
+void createNewClient(sqlite3 *db, string nombre) {
     const char* data = "Callback function called";
     char *errMsg = 0;
     int rc;
     string query = read_sql_file(".\\SQL_Scripts\\Create_New_Client.sql");
-    query = regex_replace(query, regex("\\{0\\}"), "test"); 
+    query = regex_replace(query, regex("\\{0\\}"), nombre); 
     const char *sql = query.c_str();
     rc = sqlite3_exec(db, sql, callback, (void*)data, &errMsg);
     if (rc != SQLITE_OK) {
@@ -52,7 +52,7 @@ void createNewClient(sqlite3 *db) {
 //    sqlite3 *db;
 //    int rc;
 //    rc = sqlite3_open("banco_ie0217_db.db", &db);
-//    createNewClient(db);
+//    createNewClient(db, "test");
 //
 //    sqlite3_close(db);
 //    return 0;
