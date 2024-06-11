@@ -19,7 +19,7 @@ string read_sql_file(const string& filename) {
       cerr << "Error: Could not open file '" << filename << "'" << endl;
     }
   } catch (const exception& e) {
-    cerr << "Error: An exception occurred while reading the file: " << e.what() << endl;
+    cerr << "Error: General: " << e.what() << endl;
   }
   return content;
 }
@@ -47,13 +47,13 @@ void createNewClient(sqlite3 *db, string nombre) {
     }
 }
 
-//int main(int argc, char* argv[]) {
-//
-//    sqlite3 *db;
-//    int rc;
-//    rc = sqlite3_open("banco_ie0217_db.db", &db);
-//    createNewClient(db, "test");
-//
-//    sqlite3_close(db);
-//    return 0;
-//}
+int main(int argc, char* argv[]) {
+
+    sqlite3 *db;
+    int rc;
+    rc = sqlite3_open("banco_ie0217_db.db", &db);
+    createNewClient(db, "test");
+
+    sqlite3_close(db);
+    return 0;
+}

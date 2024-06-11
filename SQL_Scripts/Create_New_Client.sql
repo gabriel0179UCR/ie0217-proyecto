@@ -27,7 +27,7 @@ VALUES (
     0
 );
 
--- Return ID of the inserted client
+-- Return ID of the new client
 SELECT ID 
 FROM Clientes 
 WHERE Nombre = '{0}'
