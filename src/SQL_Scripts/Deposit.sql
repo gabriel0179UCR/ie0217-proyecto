@@ -10,7 +10,7 @@ Parameters
 */
 
 -- Update row in Cuentas
-UPDATE Cuentas SET Cantidad = {2} WHERE ClientesID = {0} AND DenominacionID = (
+UPDATE Cuentas SET Cantidad = Cantidad + {2} WHERE ClientesID = {0} AND DenominacionID = (
     SELECT ID AS DenominacionID FROM Denominaciones WHERE Denominacion = '{1}'
 );
 
@@ -20,5 +20,4 @@ FROM Cuentas C
 LEFT JOIN Denominaciones D
 ON C.DenominacionID = D.ID
 WHERE ClientesID = {0}
-    AND D.Denominacion = '{1}'
-;
+    AND D.Denominacion = '{1}';

@@ -1,10 +1,8 @@
 #include "Manage_SQL_Queries.hpp"
 
 #include <iostream>
-#include <sqlite3.h>
 #include <fstream>
 #include <string>
-#include <regex>
 using namespace std;
 
 string read_sql_file(const string& filename) {
