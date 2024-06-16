@@ -38,3 +38,9 @@ int callback_Verify_Money_Available(void *data, int argc, char **argv, char **az
     *result = stoi(argv[0]);
     return 0;
 }
+
+int callback_Verify_ClientID_Exist(void *data, int argc, char **argv, char **azColName) {
+    int* result = static_cast<int *>(data);
+    *result = stoi(argv[0]);
+    return 0;
+}

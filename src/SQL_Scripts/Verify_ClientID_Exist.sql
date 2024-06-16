@@ -1,0 +1,3 @@
+SELECT EXISTS (
+SELECT 1 FROM Clientes WHERE ID = {0}
+);

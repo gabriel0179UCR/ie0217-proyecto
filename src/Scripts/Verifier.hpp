@@ -7,13 +7,14 @@ using namespace std;
 
 class Verifier{
     private:
-        int id;
+        int clientID;
         float quantity;
         string denomination;
         bool allow;
     public:
         Verifier(int _id);
         virtual ~Verifier(){} // Destructor
+        bool clientIdExist(sqlite3 *db);
         bool moneyAvailable(sqlite3 *db, string _denomination, float _quantity);
 };
 

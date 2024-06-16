@@ -56,13 +56,18 @@ int main() {
         };
 
         while (!exitSecundaryMenu){
-            Client client(clientID);
             Verifier verifier(clientID);
+            if (!verifier.clientIdExist(db)) {
+                cout << "ID de cliente no existe" << endl;
+                break;
+            }
+                
+            Client client(clientID);
 
             cout << endl << "///// Acciones /////" << endl;
             cout << "1. Depositar" << endl;
             cout << "2. Retirar" << endl;
-            cout << "3. Salir al menú principal" << endl;
+            cout << "3. Salir al menu principal" << endl;
 
             cout << "Ingrese su opcion: ";
             cin >> option;
