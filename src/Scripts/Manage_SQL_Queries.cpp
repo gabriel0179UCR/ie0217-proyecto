@@ -34,13 +34,19 @@ int callback(void *data, int argc, char **argv, char **azColName) {
 }
 
 int callback_Verify_Money_Available(void *data, int argc, char **argv, char **azColName) {
-    float* result = static_cast<float *>(data);
-    *result = stoi(argv[0]);
-    return 0;
+  float* result = static_cast<float *>(data);
+  *result = stof(argv[0]);
+  return 0;
 }
 
 int callback_Verify_ClientID_Exist(void *data, int argc, char **argv, char **azColName) {
-    int* result = static_cast<int *>(data);
-    *result = stoi(argv[0]);
-    return 0;
+  int* result = static_cast<int *>(data);
+  *result = stoi(argv[0]);
+  return 0;
+}
+
+int callback_Buying_Money(void *data, int argc, char **argv, char **azColName) {
+  float* result = static_cast<float *>(data);
+  *result = stof(argv[0]);
+  return 0;
 }

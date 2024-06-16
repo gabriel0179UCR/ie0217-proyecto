@@ -21,7 +21,6 @@ bool Verifier::clientIdExist(sqlite3 *db) {
         cerr << "SQL error: " << errMsg << endl;
         sqlite3_free(errMsg);
     } else {
-        cout << "Operation done successfully" << endl; 
         if (data == 0)
             return false;
         return true;

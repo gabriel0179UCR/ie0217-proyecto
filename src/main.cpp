@@ -72,26 +72,31 @@ int main() {
             cout << "Ingrese su opcion: ";
             cin >> option;
 
-            int quantity;
-            string denomination;
+            float quantity;
+            string denominationSRC;
+            string denominationDST;
 
             switch (option)
             {
             case DEPOSIT:
-                cout << "Ingrese la denominacion: ";
-                cin >> denomination;
+                cout << "Ingrese la denominacion del monto: ";
+                cin >> denominationSRC;
+                cout << "Ingrese la denominacion de la cuenta: ";
+                cin >> denominationDST;
                 cout << "Ingrese el monto a depositar: ";
                 cin >> quantity;
 
-                client.deposit(db, denomination, quantity);
+                client.deposit(db, denominationSRC, denominationDST, quantity);
                 break;
             case RETIRE:
-                cout << "Ingrese la denominacion: ";
-                cin >> denomination;
+                cout << "Ingrese la denominacion del monto: ";
+                cin >> denominationSRC;
+                cout << "Ingrese la denominacion de la cuenta: ";
+                cin >> denominationDST;
                 cout << "Ingrese el monto a retirar: ";
                 cin >> quantity;
-                if (verifier.moneyAvailable(db, denomination, quantity)) {
-                    client.retire(db, denomination, quantity);
+                if (verifier.moneyAvailable(db, denominationDST, client.convertMoney(db, denominationSRC, denominationDST, quantity))) {
+                    client.retire(db, denominationSRC, denominationDST, quantity);
                 } else {
                     cout << "Monto a retirar es mayor al monto de la cuenta" << endl;
                 }
@@ -104,9 +109,6 @@ int main() {
         }
 
     }
-
-
-    
 
     sqlite3_close(db);
 

@@ -11,8 +11,9 @@ class Client {
     public:
         Client(int _id);
         virtual ~Client(){} // Destructor
-        void deposit(sqlite3 *db, string denominationID, int quantity);
-        void retire(sqlite3 *db, string denominationID, int quantity);
+        void deposit(sqlite3 *db, string denominationSRC, string denominationDST, float quantity);
+        void retire(sqlite3 *db, string denominationSRC, string denominationDST, float quantity);
+        float convertMoney(sqlite3 *db, string denominationSRC, string denominationDST, float quantity);
 };
 
 #endif // CLIENT_HPP

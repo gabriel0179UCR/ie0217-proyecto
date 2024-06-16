@@ -13,6 +13,12 @@ CREATE TABLE TipoPrestamos (
     Tipo VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE TipoDeCambio (
+	Denominacion Varchar(10) PRIMARY KEY,
+    Compra FLOAT NOT NULL,
+    Venta FLOAT NOT NULL
+);
+
 CREATE TABLE Cuentas (
 	ClientesID INT,
     DenominacionID INT NOT NULL,
