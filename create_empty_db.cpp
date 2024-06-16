@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
     int rc;
     const char* data = "Callback function called";
 
-    rc = sqlite3_open("banco_ie0217_db.db", &db);
+    rc = sqlite3_open("Database\\banco_ie0217_db.db", &db);
     if (rc) {
         cerr << "Can't open database: " << sqlite3_errmsg(db) << endl;
         return (0);

@@ -9,7 +9,7 @@ class Client {
     private:
         int id;
     public:
-        Client(int _id) : id(_id){}
+        Client(int _id);
         virtual ~Client(){} // Destructor
         void deposit(sqlite3 *db, string denominationID, int quantity);
         void retire(sqlite3 *db, string denominationID, int quantity);
