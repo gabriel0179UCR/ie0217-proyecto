@@ -27,9 +27,9 @@ string read_sql_file(const string& filename) {
 
 //! Definicion de la funcion callback para la ejecucion de codigo de SQL general
 int callback(void *data, int argc, char **argv, char **azColName) {
-  for (int i = 0; i < argc; i++) {
-      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
-  }
+  //for (int i = 0; i < argc; i++) {
+  //    cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
+  //}
   return 0;
 }
 

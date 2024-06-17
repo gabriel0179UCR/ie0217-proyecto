@@ -80,7 +80,6 @@ void Client::retire(sqlite3 *db, string denominationSRC, string denominationDST,
     query = regex_replace(query, regex("\\{0\\}"), to_string(id)); 
     query = regex_replace(query, regex("\\{1\\}"), denominationDST); 
     query = regex_replace(query, regex("\\{2\\}"), to_string(quantity)); 
-    cout << query << endl;
     const char *sql = query.c_str();
     rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
     if (rc != SQLITE_OK) {
