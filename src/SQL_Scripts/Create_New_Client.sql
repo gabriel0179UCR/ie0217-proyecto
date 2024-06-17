@@ -1,17 +1,26 @@
--- Last ID with handle for empty table (First value null)
+/*
+Create_New_Client
+
+Query que permite crear un nuevo cliente en la base de datos
+
+Parametros
+- {0}: Nombre del cliente
+*/
+
+-- Se guarda en LastID el ultimo ID de la tabla Clientes
 WITH LastID AS (
   SELECT COALESCE(MAX(ID), 0) AS LastID
   FROM Clientes
 )
 
--- Create New Cliente row: Insert ID and Nombre to Clientes table
+-- Se crea la fila en la tabla Clientes con el nuevo nombre
 INSERT INTO Clientes (ID, Nombre)
 VALUES (
     (SELECT LastID + 1 FROM LastID),
     '{0}'
 );
 
--- Create Accounts: Colons
+-- Se crea la cuenta: Colones
 INSERT INTO Cuentas (ClientesID, DenominacionID, Cantidad)
 VALUES (
     (SELECT MAX(ID) FROM Clientes WHERE Nombre = '{0}'),
@@ -19,7 +28,7 @@ VALUES (
     0
 );
 
--- Create Accounts: Dolares
+-- Se crea la cuenta: Dolares
 INSERT INTO Cuentas (ClientesID, DenominacionID, Cantidad)
 VALUES (
     (SELECT MAX(ID) FROM Clientes WHERE Nombre = '{0}'),
@@ -27,7 +36,7 @@ VALUES (
     0
 );
 
--- Return ID of the new client
+-- Se muestra el ID del nuevo cliente
 SELECT ID 
 FROM Clientes 
 WHERE Nombre = '{0}'

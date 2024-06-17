@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Gestion Bancaria: Sistema de gestion bancaria</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema de Gestion Bancaria
+   </div>
+   <div id="projectbrief">Programa que permite el manejo el manejo de informacion y acciones de clientes en el banco</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Sistema de gestion bancaria </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__c_1_2_users_2_gabriel_2_documents_2_u_c_r_2ie0217-proyecto_2_r_e_a_d_m_e"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Estructura general</h1>
+<p>Todo el codigo del programa se encuentra dentro de la carpeta src. El programa se divide en 3 carpetas (Database, Scripts y SQL_Scripts) y 1 archivo .cpp (<a class="el" href="main_8cpp.html">main.cpp</a>).</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Archivo/Carpeta   </th><th class="markdownTableHeadNone">Funcionalidad    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="main_8cpp.html">main.cpp</a>   </td><td class="markdownTableBodyNone">Archivo que se encarga de llamar al sistema. Contiene la funcion logica del menu    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Database   </td><td class="markdownTableBodyNone">Carpeta que contiene la base de datos    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Scripts   </td><td class="markdownTableBodyNone">Carpeta que contiene los archivos .cpp y .hpp    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SQL_Scripts   </td><td class="markdownTableBodyNone">Carpeta que contiene los archivos de SQL, .sql   </td></tr>
+</table>
+<p>Para mas informacion de los archivos dentro de las carpetas acceda a la documentacion DOXYGEN en la direccion /DOXYGEN/html/index.html.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+1. Resumen de requisitos</h1>
+<p>Cliente objetivo: Agentes que atienden clientes en un banco.</p>
+<ol type="1">
+<li>Modalidad de operacion: El sistema inicia con dos opciones; modalidad de atenciÃ³n a clientes, obtener informacion sobre prestamos.</li>
+<li>Informacion general: Opciones;<ul>
+<li>Prestamos personales, prendarios, hipotecarios.</li>
+<li>Generar una tabla de pagos para la opcion elegida, el monto del prestamo es ingresado por el usuario.</li>
+<li>Obtener la tabla mediante valores personalizados de monto, cantidad de cuotas y la tasa de interes.</li>
+</ul>
+</li>
+<li>Cuentas bancarias: Un cliente posee dos cuentas; colones y dolares.</li>
+<li>Operaciones disponibles: Operaciones; depositos, retiros, transferencias, abonos a prestamos.</li>
+<li>Registro de transacciones: Registro detallado de todas las transacciones realizadas.</li>
+<li>Identificacion de clientes: Unico para cada cliente. Entre 0 y 999999999.</li>
+<li>Prestamos asociados: Prestamos asociados, en colones o dolares. Caracteristicas; tasa de interes, periodo en meses y la cuota mensual.</li>
+<li>Reporte de prestamos: El cliente puede solicitar un reporte de sus prestamos. Se genera un archivo de texto que detalla las cuotas pagadas, desglosando el aporte al capital y los intereses abonados hasta el momento.</li>
+<li>Almacenamiento de la informacion: Uso de base de datos SQL.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md3"></a>
+2. Informacion teorica</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Â¿Para que sirve un sistema de gestion bancaria?</h2>
+<p>Un sistema de gestion bancaria permite el manejo de la informacion y solicitudes por lo clientes de forma mas controlada y manteniendo un registro de todos los movimientos.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Â¿Que son un prestamo personal, prendario e hipotecario?</h2>
+<p>Un prestamo personal es un movimiento financiero en el cual el prestamista (el emisor) entrega una cantidad de dinero al prestatario (el receptor).</p>
+<p>Un prestamo prendario es un movimiento igual al de un prestamo personal, pero con la condicion que el prestatario debe brindar uno o varios activos fisicos o financieros como garantia que equivalen a la cantidad del prestamo.</p>
+<p>Un prestamo hipotecario es un movimiento igual al de un prestamo personal, pero orientado a la prestacion de dinero para la compra de un inmueble. Este movimiento requiere de la devolucion del dinero en pagos mensuales y con intereses.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Â¿Que son cuotas y tasas de interes?</h2>
+<p>Las cuotas son un monto periodico en el que una persona paga periodicamente para pagar una deuda, por ejemplo pagos mensuales de un prestamo hipotecario.</p>
+<p>Las tasas de interes son un porcentaje de operaciones que se realizan con el dinero. Existen dos tipos; interes por deposito, interes por credito. La tasa de interes por deposito equivale al pago que recibe una persona que deposita el dinero en disposicion de otra persona o entidad, por ejemplo las cuentas de ahorros. La tasa de interes por credito equivale al monto que debe pagar una persona a otra persona o entidad por la prestacion de dinero, por ejemplo los prestamos hipotecarios.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Â¿Que es una cuenta que gestiona ahorros?</h2>
+<p>Una cuenta que gestiona ahorros es una cuenta que brinda una tasa de interes alta. La condicion para el uso de una cuenta de ahorros es el de ingresar un monto de dinero que no se puede retirar si se quiere obtener la tasa de interes. En caso de retirar el monto antes del periodo de tiempo definido, no se obtendra la tasa de interes.</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Â¿Que es un certificado de deposito a plazo?</h2>
+<p>Un certificado de deposito a plazo es un tipo de inversion que permite invertir una cantidad de dinero por un periodo de tiempo para obtener un retorno respecto a una tasa de interes alta. Durante este periodo de tiempo no se puede retirar el monto. En caso de entraer el monto, no se obtendra la tasa de interes.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Â¿Que es un deposito, retiro, transferencia y abonos?</h2>
+<p>Un deposito es un movimiento financiero en el que se envia dinero fisico a una cuenta bancaria.</p>
+<p>Un retiro es un movimiento financiero en el que se extraer dinero fisico de una cuenta bancaria.</p>
+<p>Una transferencia es un movimiento financiero en el que envia dinero de una cuenta bancaria a otra.</p>
+<p>Los abonos es el dinero que se envia como parte de un pago por un bien o servicio.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Â¿Que es una transaccion?</h2>
+<p>Una transaccion es el flujo financiero reflecado como la creacion, transformacion, intercambio, transferencia o extincion de un valor economico.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Â¿Que es un reporte de prestamos? Â¿Que es el aporte al capital y los intereses abonados?</h2>
+<p>Un reporte de prestamos o historiual crediticio es un listado de todos los prestamos y abonos a prestamos de un cliente.</p>
+<p>El aporte al capital es el abono que se realiza en un prestamo para la reduccion de la deuda.</p>
+<p>Los intereses abonados es el abono que se realiza en un prestamo para la reduccion de la tasa de interes generada de la deuda.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+3. Arquitectura</h1>
+<p>En la siguiente figura se exhibe el diagrama de flujo general que describe de manera bidireccional el comportamiento del flujo de informaciÃ³n para el Sistema de GestiÃ³n Bancaria.</p>
+<p><img src="Images/Arquitectura1.png" alt="Arquitectura1" width="500" class="inline"/></p>
+<p>Se puede observar un diagrama de bloques que describe de manera general la arquitectura propuesta para el software del programa.</p>
+<p><img src="Images/AtencionClientes.png" alt="AtencionClientes" width="500" class="inline"/></p>
+<p><img src="Images/InfoGeneral.png" alt="InfoGeneral" width="500" class="inline"/></p>
+<p>En la siguiente figura se aprecia con un poco mÃ¡s de detalle el flujo de diseÃ±o a seguir para la elaboraciÃ³n del software del Sisitema de GestiÃ³n Bancaria propuesto como proyecto final. <img src="Images/Diagrama flujo.png" alt="Diagrama Flujo arquitectura Software" width="800" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md13"></a>
+4. Esquema de base de datos</h1>
+<p>Para el esquema de la base de datos se utiliza un esquema de cinco tablas. La primera tabla llamada 'Clientes' se utilizara para almacenar el ID unico de cada cliente, el nombre y el ID de las cuentas de la tabla 'Cuentas'.</p>
+<p>La tabla 'Cuentas' posee un ID identificador unico de la tabla y dos columnas de ID's. Una de las dos columnas es el ID de la cuenta en colones y la otra columna es la cuenta en dolares. Estos datos pueden llegar a ser NULL debido a que un cliente puede tener solo una cuenta en colones o solo una cuenta en dolares.</p>
+<p>Los ID's de las cuentas en colones y dolares hacen referencia a la tabla 'InfoCuenta' que posee una columna con la denominacion, ya sea 'Colones' o 'Dolares', la cantidad de dinero en la cuenta y la fecha de creacion de la cuenta.</p>
+<p><img src="Images/EsquemaBaseDatos.png" alt="EsquemaBaseDatos" width="700" class="inline"/></p>
+<p>Por otra parte, tambien se posee una tabla para los CDPs, en el que poseen un ID unico y hacen referencia a la tabla 'Clientes' por medio de la columna 'ClienteID'. Ademas, se posee el monto de dinero que se ingresa al CDP, el tiempo total que se planea ingresar el dinero (3 meses, 6 meses, etc), el interes que se va a obtener, la fecha de creacion del CDP y la fecha de expiracion del mismo.</p>
+<p>Para el tema de los prestamos, al igual que los CDPs, se posee una tabla 'PrestamosClientes' que por medio de la columna 'ClienteID' va a hacer referencia al ID de la tabla 'Clientes' para determinar de cual cliente es el prestamo, un cliente puede tener varios prestamos. Ademas, se posee una columna 'TipoPrestamoID' que se relaciona con la tabla 'TipoPrestamos', que este va a poseer los tipos Personal, Prendario e Hipotecario. En la tabla 'PrestamosClientes' tambien se posee la denominacion (ya sea 'Colones' o 'Dolares'), el monto del prestamo, el interes que se debe pagar del prestamo, la cantidad en cuotas mensuales, el monto total tomando en consideracion el interes, el total abonado y el monto faltante. </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"/>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

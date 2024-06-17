@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Gestion Bancaria: Archivo de código fuente C:/Users/Gabriel/Documents/UCR/ie0217-proyecto/src/Scripts/Manage_SQL_Queries.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema de Gestion Bancaria
+   </div>
+   <div id="projectbrief">Programa que permite el manejo el manejo de informacion y acciones de clientes en el banco</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3ac9928fc2e7e2cbc53db7c1a11acda2.html">Scripts</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Manage_SQL_Queries.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_manage___s_q_l___queries_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MANAGESQLQUERIES_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MANAGESQLQUERIES_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">string</span> <a class="code hl_function" href="_manage___s_q_l___queries_8hpp.html#a34626254c780ee1d20401def891d5192">read_sql_file</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">int</span> <a class="code hl_function" href="_manage___s_q_l___queries_8hpp.html#afe15cff2196f484e76df8349f0487a49">callback</a>(<span class="keywordtype">void</span> *data, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **azColName);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">int</span> <a class="code hl_function" href="_manage___s_q_l___queries_8hpp.html#a78565fb0a23c1bf5726b3ed2b03e9ff2">callback_Verify_Money_Available</a>(<span class="keywordtype">void</span> *data, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **azColName);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">int</span> <a class="code hl_function" href="_manage___s_q_l___queries_8hpp.html#a732f072196815285fc6cac483b703211">callback_Verify_ClientID_Exist</a>(<span class="keywordtype">void</span> *data, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **azColName);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">int</span> <a class="code hl_function" href="_manage___s_q_l___queries_8hpp.html#a6951ec506515c9baa04ef90f54b6de65">callback_Convert_Money</a>(<span class="keywordtype">void</span> *data, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **azColName);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">int</span> <a class="code hl_function" href="_manage___s_q_l___queries_8hpp.html#a6e3fcfb5c39ca474e7f68fd586503fe2">callback_Create_New_Client</a>(<span class="keywordtype">void</span> *data, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **azColName);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_manage___s_q_l___queries_8hpp_html_a34626254c780ee1d20401def891d5192"><div class="ttname"><a href="_manage___s_q_l___queries_8hpp.html#a34626254c780ee1d20401def891d5192">read_sql_file</a></div><div class="ttdeci">string read_sql_file(const string &amp;filename)</div><div class="ttdoc">Declaracion de la funcion que permite almacenar el codigo de SQL en un string.</div><div class="ttdef"><b>Definition</b> create_empty_db.cpp:14</div></div>
+<div class="ttc" id="a_manage___s_q_l___queries_8hpp_html_a6951ec506515c9baa04ef90f54b6de65"><div class="ttname"><a href="_manage___s_q_l___queries_8hpp.html#a6951ec506515c9baa04ef90f54b6de65">callback_Convert_Money</a></div><div class="ttdeci">int callback_Convert_Money(void *data, int argc, char **argv, char **azColName)</div><div class="ttdoc">Declaracion de la funcion callback para la ejecucion de codigo de SQL que convierte el dinero segun e...</div><div class="ttdef"><b>Definition</b> Manage_SQL_Queries.cpp:51</div></div>
+<div class="ttc" id="a_manage___s_q_l___queries_8hpp_html_a6e3fcfb5c39ca474e7f68fd586503fe2"><div class="ttname"><a href="_manage___s_q_l___queries_8hpp.html#a6e3fcfb5c39ca474e7f68fd586503fe2">callback_Create_New_Client</a></div><div class="ttdeci">int callback_Create_New_Client(void *data, int argc, char **argv, char **azColName)</div><div class="ttdoc">Declaracion de la funcion callback para la ejecucion de codigo de SQL que crea un nuevo cliente en la...</div><div class="ttdef"><b>Definition</b> Manage_SQL_Queries.cpp:58</div></div>
+<div class="ttc" id="a_manage___s_q_l___queries_8hpp_html_a732f072196815285fc6cac483b703211"><div class="ttname"><a href="_manage___s_q_l___queries_8hpp.html#a732f072196815285fc6cac483b703211">callback_Verify_ClientID_Exist</a></div><div class="ttdeci">int callback_Verify_ClientID_Exist(void *data, int argc, char **argv, char **azColName)</div><div class="ttdoc">Declaracion de la funcion callback para la ejecucion de codigo de SQL que verifica si existe el ID de...</div><div class="ttdef"><b>Definition</b> Manage_SQL_Queries.cpp:44</div></div>
+<div class="ttc" id="a_manage___s_q_l___queries_8hpp_html_a78565fb0a23c1bf5726b3ed2b03e9ff2"><div class="ttname"><a href="_manage___s_q_l___queries_8hpp.html#a78565fb0a23c1bf5726b3ed2b03e9ff2">callback_Verify_Money_Available</a></div><div class="ttdeci">int callback_Verify_Money_Available(void *data, int argc, char **argv, char **azColName)</div><div class="ttdoc">Declaracion de la funcion callback para la ejecucion de codigo de SQL que verifica si hay dinero disp...</div><div class="ttdef"><b>Definition</b> Manage_SQL_Queries.cpp:37</div></div>
+<div class="ttc" id="a_manage___s_q_l___queries_8hpp_html_afe15cff2196f484e76df8349f0487a49"><div class="ttname"><a href="_manage___s_q_l___queries_8hpp.html#afe15cff2196f484e76df8349f0487a49">callback</a></div><div class="ttdeci">int callback(void *data, int argc, char **argv, char **azColName)</div><div class="ttdoc">Declaracion de la funcion callback para la ejecucion de codigo de SQL general.</div><div class="ttdef"><b>Definition</b> Manage_SQL_Queries.cpp:29</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

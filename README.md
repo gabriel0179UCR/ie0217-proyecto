@@ -1,21 +1,35 @@
-# Sistema de gestión bancaria
+# Sistema de gestion bancaria
+
+## Estructura general
+
+Todo el codigo del programa se encuentra dentro de la carpeta src.
+El programa se divide en 3 carpetas (Database, Scripts y SQL_Scripts) y 1 archivo .cpp (main.cpp).
+
+| Archivo/Carpeta | Funcionalidad |
+| - | - |
+| main.cpp | Archivo que se encarga de llamar al sistema. Contiene la funcion logica del menu |
+| Database | Carpeta que contiene la base de datos | 
+| Scripts | Carpeta que contiene los archivos .cpp y .hpp |
+| SQL_Scripts | Carpeta que contiene los archivos de SQL, .sql | 
+
+Para mas informacion de los archivos dentro de las carpetas acceda a la documentacion DOXYGEN en la direccion /DOXYGEN/html/index.html.
 
 ## 1. Resumen de requisitos
 
 Cliente objetivo: Agentes que atienden clientes en un banco.
 
-1.	Modalidad de operación: El sistema inicia con dos opciones; modalidad de atención a clientes, obtener información sobre préstamos.
-2.	Información general: Opciones; 
-    -	Préstamos personales, prendarios, hipotecarios. 
-    -	Generar una tabla de pagos para la opción elegida, el monto del préstamo es ingresado por el usuario. 
-    -	Obtener la tabla mediante valores personalizados de monto, cantidad de cuotas y la tasa de interés.
-3.	Cuentas bancarias: Un cliente posee dos cuentas; colones y dólares.
-4.	Operaciones disponibles: Operaciones; depósitos, retiros, transferencias, abonos a préstamos.
+1.	Modalidad de operacion: El sistema inicia con dos opciones; modalidad de atención a clientes, obtener informacion sobre prestamos.
+2.	Informacion general: Opciones; 
+    -	Prestamos personales, prendarios, hipotecarios. 
+    -	Generar una tabla de pagos para la opcion elegida, el monto del prestamo es ingresado por el usuario. 
+    -	Obtener la tabla mediante valores personalizados de monto, cantidad de cuotas y la tasa de interes.
+3.	Cuentas bancarias: Un cliente posee dos cuentas; colones y dolares.
+4.	Operaciones disponibles: Operaciones; depositos, retiros, transferencias, abonos a prestamos.
 5.	Registro de transacciones: Registro detallado de todas las transacciones realizadas.
-6.	Identificación de clientes: Único para cada cliente. Entre 0 y 999999999.
-7.	Préstamos asociados: Préstamos asociados, en colones o dólares. Características; tasa de interés, periodo en meses y la cuota mensual.
-8.	Reporte de préstamos: El cliente puede solicitar un reporte de sus préstamos. Se genera un archivo de texto que detalla las cuotas pagadas, desglosando el aporte al capital y los intereses abonados hasta el momento.
-9.	Almacenamiento de la información: Uso de base de datos SQL.
+6.	Identificacion de clientes: Unico para cada cliente. Entre 0 y 999999999.
+7.	Prestamos asociados: Prestamos asociados, en colones o dolares. Caracteristicas; tasa de interes, periodo en meses y la cuota mensual.
+8.	Reporte de prestamos: El cliente puede solicitar un reporte de sus prestamos. Se genera un archivo de texto que detalla las cuotas pagadas, desglosando el aporte al capital y los intereses abonados hasta el momento.
+9.	Almacenamiento de la informacion: Uso de base de datos SQL.
 
 
 ## 2. Informacion teorica

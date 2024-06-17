@@ -5,12 +5,15 @@
 #include "Scripts\Verifier.hpp"
 using namespace std;
 // g++ main.cpp Scripts\Client.cpp Scripts\Verifier.cpp Scripts\Manage_SQL_Queries.cpp -o test -IC:\sqlite -LC:\sqlite -lsqlite3
+
+//! Estructura del menu principal
 enum ClientEnter {
     ENTERCLIENT = 1,
     ADDCLIENT,
     EXIT
 };
 
+//! Estructura del menu secundario
 enum ClientOptions {
     DEPOSIT = 1,
     RETIRE
@@ -25,9 +28,11 @@ int main() {
 
     sqlite3 *db;
     int rc;
+    // Se establece conexion a la base de datos
     rc = sqlite3_open("Database\\banco_ie0217_db.db", &db);
 
     while(!exitPrincipalMenu) {
+        // Menu principal
         cout << endl << "///// Sistema de gestion bancaria /////" << endl;
         cout << "1. Ingresar cliente" << endl;
         cout << "2. Agregar cliente" << endl;
@@ -45,10 +50,12 @@ int main() {
         case ADDCLIENT:
             cout << "Agregue el nombre del cliente: ";
             cin >> clientName;
+            clientID =createNewClient(db, clientName);
             exitSecundaryMenu = false;
             break;
         case EXIT:
             exitPrincipalMenu = true;
+            return 0;
             break;
         default:
             cout << "Opcion incorrecta" << endl;
@@ -61,9 +68,9 @@ int main() {
                 cout << "ID de cliente no existe" << endl;
                 break;
             }
-                
             Client client(clientID);
 
+            // Menu secundario
             cout << endl << "///// Acciones /////" << endl;
             cout << "1. Depositar" << endl;
             cout << "2. Retirar" << endl;

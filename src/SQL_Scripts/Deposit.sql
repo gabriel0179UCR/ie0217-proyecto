@@ -1,20 +1,20 @@
 /*
 Deposit
 
-Query to update the quantity in the account
+Query que actualiza la cantidad de dinero en una cuenta
 
-Parameters
-- {0}: Client ID
-- {1}: Denomination (ex. 'Colones')
-- {2}: Quantity
+Parametros
+- {0}: ID del cliente
+- {1}: Denominacion (ej. 'Colones')
+- {2}: Cantidad
 */
 
--- Update row in Cuentas
+-- Se actualiza la fila en la tabla Cuentas
 UPDATE Cuentas SET Cantidad = Cantidad + {2} WHERE ClientesID = {0} AND DenominacionID = (
     SELECT ID AS DenominacionID FROM Denominaciones WHERE Denominacion = '{1}'
 );
 
--- Show the new quantity in the count
+-- Se muestra la nueva cantidad en la cuenta
 SELECT ClientesID, D.Denominacion, Cantidad
 FROM Cuentas C
 LEFT JOIN Denominaciones D
