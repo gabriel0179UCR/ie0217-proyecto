@@ -20,6 +20,7 @@ CREATE TABLE TipoDeCambio (
 );
 
 CREATE TABLE Cuentas (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
 	ClientesID INT,
     DenominacionID INT NOT NULL,
     Cantidad FLOAT,
@@ -57,4 +58,26 @@ CREATE TABLE CDPs (
     FechaExpiracion DATETIME NOT NULL,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ID),
     FOREIGN KEY (DenominacionID) REFERENCES Denominaciones(ID)
+);
+
+
+CREATE TABLE TipoTransaccion (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+    Transaccion VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Transacciones (
+	ClienteID INT NOT NULL,
+    TipoTransaccionID INT NOT NULL,
+    CuentaFuenteID INT NOT NULL,
+    CuentaDestinoID INT NOT NULL,
+    DenominacionID INT NOT NULL,
+    CantidadPrevio FLOAT NOT NULL,
+    CantidadPosterior FLOAT NOT NULL,
+    Diferencia FLOAT NOT NULL,
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ID),
+    FOREIGN KEY (TipoTransaccionID) REFERENCES TipoTransaccion(ID),
+    FOREIGN KEY (DenominacionID) REFERENCES Denominaciones(ID),
+    FOREIGN KEY (CuentaFuenteID) REFERENCES Cuentas(ID),
+    FOREIGN KEY (CuentaDestinoID) REFERENCES Cuentas(ID)
 );
