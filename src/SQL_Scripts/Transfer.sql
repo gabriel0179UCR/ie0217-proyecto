@@ -26,3 +26,28 @@ WHERE ClientesID = {1}
     AND DenominacionID = (
         SELECT ID FROM Denominaciones WHERE Denominacion = '{5}'
     );
+
+-- Se registra la transaccion
+INSERT INTO Transacciones(ClienteID, TipoTransaccionID, CuentaFuenteID, CuentaDestinoID, DenominacionID, CantidadPrevio, CantidadPosterior, Diferencia)
+VALUES(
+	{0},
+    (SELECT ID FROM TipoTransaccion WHERE Transaccion = 'Transferencia'),
+    (SELECT ID FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
+    (SELECT ID FROM Cuentas WHERE ClienteID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
+    (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}'),
+    (SELECT Cantidad + {2} FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
+    (SELECT Cantidad FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
+    0-{2}
+);
+
+INSERT INTO Transacciones(ClienteID, TipoTransaccionID, CuentaFuenteID, CuentaDestinoID, DenominacionID, CantidadPrevio, CantidadPosterior, Diferencia)
+VALUES(
+	{1},
+    (SELECT ID FROM TipoTransaccion WHERE Transaccion = 'Transferencia'),
+    (SELECT ID FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
+    (SELECT ID FROM Cuentas WHERE ClienteID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
+    (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}'),
+    (SELECT Cantidad - {2} FROM Cuentas WHERE ClienteID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
+    (SELECT Cantidad FROM Cuentas WHERE ClienteID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
+    {2}
+);

@@ -21,3 +21,18 @@ LEFT JOIN Denominaciones D
 ON C.DenominacionID = D.ID
 WHERE ClientesID = {0}
     AND D.Denominacion = '{1}';
+
+-- Se registra la transaccion
+INSERT INTO Transacciones(ClienteID, TipoTransaccionID, CuentaFuenteID, CuentaDestinoID, DenominacionID, CantidadPrevio, CantidadPosterior, Diferencia)
+VALUES(
+	{0},
+    (SELECT ID FROM TipoTransaccion WHERE Transaccion = 'Deposito'),
+    (SELECT ID FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{1}')),
+    (SELECT ID FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{1}')),
+    (SELECT ID FROM Denominaciones WHERE Denominacion = '{1}'),
+    (SELECT Cantidad - {2} FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{1}')),
+    (SELECT Cantidad FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{1}')),
+    {2}
+);
+
+
