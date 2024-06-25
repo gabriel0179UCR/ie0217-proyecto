@@ -22,6 +22,9 @@ class Client {
 
         //! Declaracion del metodo que permite retirar dinero de una cuenta
         void retire(sqlite3 *db, string denominationSRC, string denominationDST, float quantity);
+
+        //! Declaracion del metodo que permite transferir entre cuentas  
+        void transfer(sqlite3 *db, string denominationSRC, int idDST, string denominationDST, string denominationQuantit, float quantity);
         
 };
 

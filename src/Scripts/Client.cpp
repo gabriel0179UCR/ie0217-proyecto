@@ -89,3 +89,37 @@ void Client::retire(sqlite3 *db, string denominationSRC, string denominationDST,
 }
 
 
+//! Definicion del metodo que permite transferir dinero entre cuentas
+void Client::transfer(sqlite3 *db, string denominationSRC, int idDST, string denominationDST, string denominationQuantity, float quantity){
+    float quantitySRC;
+    float quantityDST;
+
+    if (denominationSRC == denominationQuantity && denominationDST == denominationQuantity) {
+        quantitySRC = quantity;
+        quantityDST = quantity;
+    } else if (denominationSRC == denominationQuantity && denominationDST != denominationQuantity) {
+        quantitySRC = quantity;
+        quantityDST = convertMoney(db, denominationQuantity, denominationDST, quantity);
+    } else if (denominationSRC != denominationQuantity && denominationDST == denominationQuantity) {
+        quantitySRC = convertMoney(db, denominationQuantity, denominationSRC, quantity);
+        quantityDST = quantity;
+    } else {
+        quantitySRC = convertMoney(db, denominationQuantity, denominationSRC, quantity);
+        quantityDST = convertMoney(db, denominationQuantity, denominationDST, quantity);
+    }
+    char *errMsg = 0;
+    int rc;
+    string query = read_sql_file(TRANSFER);
+    query = regex_replace(query, regex("\\{0\\}"), to_string(id)); 
+    query = regex_replace(query, regex("\\{1\\}"), to_string(idDST)); 
+    query = regex_replace(query, regex("\\{2\\}"), to_string(quantitySRC));
+    query = regex_replace(query, regex("\\{3\\}"), to_string(quantityDST)); 
+    query = regex_replace(query, regex("\\{4\\}"), denominationSRC); 
+    query = regex_replace(query, regex("\\{5\\}"), denominationDST); 
+    const char *sql = query.c_str();
+    rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        cerr << "SQL error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+    }
+}

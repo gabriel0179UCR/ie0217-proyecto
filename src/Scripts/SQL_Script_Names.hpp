@@ -22,4 +22,7 @@ const string VERIFY_CLIENTID_EXIST = ".\\SQL_Scripts\\Verify_ClientID_Exist.sql"
 //! Codigo de SQL que se encarga de verificar si se encuentra dinero disponible para retirar o transferir
 const string VERIFY_MONEY_AVAILABLE = ".\\SQL_Scripts\\Verify_Money_Available.sql";
 
+//! Codigo de SQL que se encarga de transferir dinero entre dos cuentas
+const string TRANSFER = ".\\SQL_Scripts\\Transfer.sql";
+
 #endif // SQLSCRIPTNAMES_HPP
