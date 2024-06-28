@@ -25,6 +25,9 @@ class Client {
 
         //! Declaracion del metodo que permite transferir entre cuentas  
         void transfer(sqlite3 *db, string denominationSRC, int idDST, string denominationDST, string denominationQuantit, float quantity);
+
+        //! Declaracion del metodo que consulta el registro de transacciones
+        void transactions(sqlite3 *db);
         
 };
 

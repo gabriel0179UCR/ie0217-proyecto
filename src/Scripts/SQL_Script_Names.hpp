@@ -25,4 +25,7 @@ const string VERIFY_MONEY_AVAILABLE = ".\\SQL_Scripts\\Verify_Money_Available.sq
 //! Codigo de SQL que se encarga de transferir dinero entre dos cuentas
 const string TRANSFER = ".\\SQL_Scripts\\Transfer.sql";
 
+//! Codigo de SQL que se encarga de consultar el reporte de transacciones
+const string TRANSACTIONS = ".\\SQL_Scripts\\Transactions.sql";
+
 #endif // SQLSCRIPTNAMES_HPP

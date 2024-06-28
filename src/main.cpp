@@ -10,13 +10,16 @@ using namespace std;
 enum ClientEnter {
     ENTERCLIENT = 1,
     ADDCLIENT,
-    EXIT
+    EXITPRINCIPAL
 };
 
 //! Estructura del menu secundario
 enum ClientOptions {
     DEPOSIT = 1,
-    RETIRE
+    RETIRE,
+    TRANSFER,
+    TRANSACTIONS,
+    EXITSECUNDARY
 };
 
 int main() {
@@ -53,7 +56,7 @@ int main() {
             clientID =createNewClient(db, clientName);
             exitSecundaryMenu = false;
             break;
-        case EXIT:
+        case EXITPRINCIPAL:
             exitPrincipalMenu = true;
             return 0;
             break;
@@ -74,7 +77,8 @@ int main() {
             cout << endl << "///// Acciones /////" << endl;
             cout << "1. Depositar" << endl;
             cout << "2. Retirar" << endl;
-            cout << "3. Salir al menu principal" << endl;
+            cout << "3. Transferir" << endl;
+            cout << "4. Salir al menu principal" << endl;
 
             cout << "Ingrese su opcion: ";
             cin >> option;
@@ -108,7 +112,11 @@ int main() {
                     cout << "Monto a retirar es mayor al monto de la cuenta" << endl;
                 }
                 break;
-            case EXIT:
+            case TRANSACTIONS:
+                cout << "Reporte de transacciones" << endl;
+                break;
+            
+            case EXITSECUNDARY:
                 cout << "Saliendo al menu principal" << endl;
                 exitSecundaryMenu = true;
                 break;

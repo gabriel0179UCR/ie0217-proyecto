@@ -123,3 +123,17 @@ void Client::transfer(sqlite3 *db, string denominationSRC, int idDST, string den
         sqlite3_free(errMsg);
     }
 }
+
+//! Definicion del metodo que consulta
+void Client::transactions(sqlite3 *db) {
+    char *errMsg = 0;
+    int rc;
+    string query = read_sql_file(TRANSACTIONS);
+    query = regex_replace(query, regex("\\{0\\}"), to_string(id)); 
+    const char *sql = query.c_str();
+    rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        cerr << "SQL error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+    }
+}
