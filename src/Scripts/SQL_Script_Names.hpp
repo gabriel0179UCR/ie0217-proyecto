@@ -29,6 +29,9 @@ const string TRANSFER = ".\\SQL_Scripts\\Transfer.sql";
 const string TRANSACTIONS = ".\\SQL_Scripts\\Transactions.sql";
 
 //! Codigo de SQL que se encarga de crear prestamos para clientes
-const string LOAN = ".\\SQL_Scripts\\Loan.sq";
+const string LOAN = ".\\SQL_Scripts\\Loan.sql";
+
+//! Codigo de SQL que se encarga de abonar dinero en prestamos
+const string LOAN_PAYMENT = ".\\SQL_Scripts\\Loan_Payment.sql";
 
 #endif // SQLSCRIPTNAMES_HPP

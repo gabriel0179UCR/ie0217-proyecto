@@ -155,3 +155,18 @@ void Client::loan(sqlite3 *db, string loanType, string denomination, float quant
         sqlite3_free(errMsg);
     }  
 };
+
+//! Definicion del metodo que abona dinero a un prestamo
+void Client::loan_payment(sqlite3 *db, int loanID, float quantity) {
+    char *errMsg = 0;
+    int rc;
+    string query = read_sql_file(LOAN_PAYMENT);
+    query = regex_replace(query, regex("\\{0\\}"), to_string(loanID));
+    query = regex_replace(query, regex("\\{1\\}"), to_string(quantity)); 
+    const char *sql = query.c_str();
+    rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        cerr << "SQL error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+    } 
+};
