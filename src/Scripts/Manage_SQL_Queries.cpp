@@ -35,7 +35,6 @@ int callback(void *data, int argc, char **argv, char **azColName) {
 
 //! Definicion de la funcion callback que muestra la informacion general del cliente
 int callback_Get_Client_Data(void *data, int argc, char **argv, char **azColName) {
-  cout << endl << "/// Informacion de cliente ///" << endl;
   for (int i = 0; i < argc; i=i+6) {
     for (int j = 0; j < 6; j++) {
       cout << azColName[i+j] << " = " << (argv[i+j] ? argv[i+j] : "NULL") << " | ";
@@ -76,6 +75,28 @@ int callback_Create_New_Client(void *data, int argc, char **argv, char **azColNa
 //! Definicion de la funcion callback para el metodo que deposita dinero en una cuenta
 int callback_Deposit(void *data, int argc, char **argv, char **azColName) {
   cout << endl << "Deposito realizado correctamente" << endl;
+  for (int i = 0; i < argc; i++) {
+      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+  }
+  cout << endl;
+
+  return 0;
+};
+
+//! Definicion de la funcion callback para el metodo que retira dinero en una cuenta
+int callback_Retire(void *data, int argc, char **argv, char **azColName) {
+  cout << endl << "Retiro realizado correctamente" << endl;
+  for (int i = 0; i < argc; i++) {
+      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+  }
+  cout << endl;
+
+  return 0;
+};
+
+//! Definicion de la funcion callback para el metodo que transfiere dinero de una cuenta a otra
+int callback_Transfer(void *data, int argc, char **argv, char **azColName) {
+  cout << endl << "Transferencia realizada correctamente" << endl;
   for (int i = 0; i < argc; i++) {
       cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
   }

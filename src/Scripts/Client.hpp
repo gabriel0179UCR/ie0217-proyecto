@@ -25,7 +25,7 @@ class Client {
         void retire(sqlite3 *db, string denominationSRC, string denominationDST, float quantity);
 
         //! Declaracion del metodo que permite transferir entre cuentas  
-        void transfer(sqlite3 *db, string denominationSRC, int idDST, string denominationDST, string denominationQuantit, float quantity);
+        void transfer(sqlite3 *db, string denominationSRC, int idDST, string denominationDST, string denominationQuantity, float quantity);
 
         //! Declaracion del metodo que consulta el registro de transacciones
         void transactions(sqlite3 *db);

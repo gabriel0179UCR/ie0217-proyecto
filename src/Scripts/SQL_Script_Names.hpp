@@ -7,6 +7,9 @@ using namespace std;
 //! Codigo de SQL que se encarga de crear un cliente nuevo en la base de datos
 const string CREATE_NEW_CLIENT = ".\\SQL_Scripts\\Create_New_Client.sql";
 
+//! Codigo de SQL que se encarga de solicitar informacion basica del cliente
+const string GET_CLIENT_DATA = ".\\SQL_Scripts\\Get_Client_Data.sql";
+
 //! Codigo de SQL que se encarga de convertir el dinero en funcion del tipo de cambio
 const string CONVERT_MONEY = ".\\SQL_Scripts\\Convert_Money.sql";
 

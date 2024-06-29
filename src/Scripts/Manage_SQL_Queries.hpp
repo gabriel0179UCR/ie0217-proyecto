@@ -27,4 +27,10 @@ int callback_Create_New_Client(void *data, int argc, char **argv, char **azColNa
 
 //! Declaracion de la funcion callback para el metodo que deposita dinero en una cuenta
 int callback_Deposit(void *data, int argc, char **argv, char **azColName);
+
+//! Declaracion de la funcion callback para el metodo que retira dinero en una cuenta
+int callback_Retire(void *data, int argc, char **argv, char **azColName);
+
+//! Declaracion de la funcion callback para el metodo que transfiere dinero de una cuenta a otra
+int callback_Transfer(void *data, int argc, char **argv, char **azColName);
 #endif

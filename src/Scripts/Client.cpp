@@ -32,6 +32,7 @@ Client::Client(int _id, sqlite3 *_db) : id(_id),db(_db){
     query = read_sql_file(GET_CLIENT_DATA);
     query = regex_replace(query, regex("\\{0\\}"), to_string(id)); 
     sql = query.c_str();
+    cout << endl << "Informacion general del cliente" << endl;
     rc = sqlite3_exec(db, sql, callback_Get_Client_Data, 0, &errMsg);
     if (rc != SQLITE_OK) {
         cerr << "SQL error: " << errMsg << endl;
@@ -94,7 +95,7 @@ void Client::retire(sqlite3 *db, string denominationSRC, string denominationDST,
     query = regex_replace(query, regex("\\{1\\}"), denominationDST); 
     query = regex_replace(query, regex("\\{2\\}"), to_string(quantity)); 
     const char *sql = query.c_str();
-    rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
+    rc = sqlite3_exec(db, sql, callback_Retire, 0, &errMsg);
     if (rc != SQLITE_OK) {
         cerr << "SQL error: " << errMsg << endl;
         sqlite3_free(errMsg);
@@ -130,7 +131,7 @@ void Client::transfer(sqlite3 *db, string denominationSRC, int idDST, string den
     query = regex_replace(query, regex("\\{4\\}"), denominationSRC); 
     query = regex_replace(query, regex("\\{5\\}"), denominationDST); 
     const char *sql = query.c_str();
-    rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
+    rc = sqlite3_exec(db, sql, callback_Transfer, 0, &errMsg);
     if (rc != SQLITE_OK) {
         cerr << "SQL error: " << errMsg << endl;
         sqlite3_free(errMsg);

@@ -10,7 +10,8 @@ CREATE TABLE Denominaciones (
 
 CREATE TABLE TipoPrestamos (
 	ID INT AUTO_INCREMENT PRIMARY KEY,
-    Tipo VARCHAR(50) NOT NULL
+    Tipo VARCHAR(50) NOT NULL,
+    Interes FLOAT
 );
 
 CREATE TABLE TipoDeCambio (
@@ -35,13 +36,12 @@ CREATE TABLE PrestamosClientes (
 	TipoPrestamoID INT NOT NULL,
     DenominacionID INT NOT NULL,
     MontoPrestamo FLOAT NOT NULL,
-    Interes FLOAT NOT NULL,
     Cuotas FLOAT NOT NULL,
     MontoTotal FLOAT NOT NULL,
     TotalAbonado FLOAT,
     MontoFaltante FLOAT NOT NULL,
     FechaCreacion DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FechaFinalizacion DATETIME NOT NULL,
+    FechaFinalizacion DATETIME,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ID),
     FOREIGN KEY (TipoPrestamoID) REFERENCES TipoPrestamos(ID),
     FOREIGN KEY (DenominacionID) REFERENCES Denominaciones(ID)
@@ -56,6 +56,7 @@ CREATE TABLE CDPs (
     Interes FLOAT NOT NULL,
     FechaIngreso DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FechaExpiracion DATETIME NOT NULL,
+    FechaCancelacion DATETIME,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ID),
     FOREIGN KEY (DenominacionID) REFERENCES Denominaciones(ID)
 );
@@ -75,6 +76,7 @@ CREATE TABLE Transacciones (
     CantidadPrevio FLOAT NOT NULL,
     CantidadPosterior FLOAT NOT NULL,
     Diferencia FLOAT NOT NULL,
+    Fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ID),
     FOREIGN KEY (TipoTransaccionID) REFERENCES TipoTransaccion(ID),
     FOREIGN KEY (DenominacionID) REFERENCES Denominaciones(ID),

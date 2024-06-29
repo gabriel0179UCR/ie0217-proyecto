@@ -32,11 +32,11 @@ INSERT INTO Transacciones(ClienteID, TipoTransaccionID, CuentaFuenteID, CuentaDe
 VALUES(
 	{0},
     (SELECT ID FROM TipoTransaccion WHERE Transaccion = 'Transferencia'),
-    (SELECT ID FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
-    (SELECT ID FROM Cuentas WHERE ClienteID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
+    (SELECT ID FROM Cuentas WHERE ClientesID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
+    (SELECT ID FROM Cuentas WHERE ClientesID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
     (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}'),
-    (SELECT Cantidad + {2} FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
-    (SELECT Cantidad FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
+    (SELECT Cantidad + {2} FROM Cuentas WHERE ClientesID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
+    (SELECT Cantidad FROM Cuentas WHERE ClientesID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
     0-{2}
 );
 
@@ -44,10 +44,23 @@ INSERT INTO Transacciones(ClienteID, TipoTransaccionID, CuentaFuenteID, CuentaDe
 VALUES(
 	{1},
     (SELECT ID FROM TipoTransaccion WHERE Transaccion = 'Transferencia'),
-    (SELECT ID FROM Cuentas WHERE ClienteID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
-    (SELECT ID FROM Cuentas WHERE ClienteID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
+    (SELECT ID FROM Cuentas WHERE ClientesID = {0} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{4}')),
+    (SELECT ID FROM Cuentas WHERE ClientesID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
     (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}'),
-    (SELECT Cantidad - {2} FROM Cuentas WHERE ClienteID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
-    (SELECT Cantidad FROM Cuentas WHERE ClienteID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
+    (SELECT Cantidad - {2} FROM Cuentas WHERE ClientesID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
+    (SELECT Cantidad FROM Cuentas WHERE ClientesID = {1} AND DenominacionID = (SELECT ID FROM Denominaciones WHERE Denominacion = '{5}')),
     {2}
 );
+
+
+SELECT 
+    ClienteID "ID del cliente"
+    ,CuentaFuenteID "Cuenta fuente"
+    ,CuentaDestinoID "Cuenta destino"
+    ,D.Denominacion "Denominacion"
+    ,CantidadPrevio "Cantidad en cuenta fuente"
+    ,Diferencia "Cantidad transferida"
+FROM Transacciones T
+LEFT JOIN Denominaciones D ON D.ID = T.DenominacionID
+WHERE ClienteID = {0}
+ORDER BY Fecha LIMIT 1;
