@@ -28,3 +28,17 @@ FROM PrestamosClientes PC
 LEFT JOIN TipoPrestamos TP ON TP.ID = PC.TipoPrestamoID
 LEFT JOIN Denominaciones D ON D.ID = PC.DenominacionID
 WHERE PC.ID = {0};
+
+
+-- Se registra la transaccion
+INSERT INTO Transacciones(ClienteID, TipoTransaccionID, CuentaFuenteID, CuentaDestinoID, DenominacionID, CantidadPrevio, CantidadPosterior, Diferencia)
+VALUES(
+	(SELECT ClienteID FROM PrestamosClientes WHERE ID = {0}),
+    (SELECT ID FROM TipoTransaccion WHERE Transaccion = 'Abono'),
+    {0},
+    {0},
+    (SELECT DenominacionID FROM PrestamosClientes WHERE ID = {0}),
+    (SELECT -1*MontoFaltante FROM PrestamosClientes WHERE ID = {0}),
+    (SELECT -1*(MontoFaltante - {1}) FROM PrestamosClientes WHERE ID = {0}),
+    {1}
+);
