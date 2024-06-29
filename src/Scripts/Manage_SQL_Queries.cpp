@@ -35,8 +35,8 @@ int callback(void *data, int argc, char **argv, char **azColName) {
 
 //! Definicion de la funcion callback que muestra la informacion general del cliente
 int callback_Get_Client_Data(void *data, int argc, char **argv, char **azColName) {
+  cout << endl << "/// Informacion de cliente ///" << endl;
   for (int i = 0; i < argc; i=i+6) {
-    cout << endl;
     for (int j = 0; j < 6; j++) {
       cout << azColName[i+j] << " = " << (argv[i+j] ? argv[i+j] : "NULL") << " | ";
     }
@@ -72,3 +72,14 @@ int callback_Create_New_Client(void *data, int argc, char **argv, char **azColNa
   *result = stoi(argv[0]);
   return 0;
 }
+
+//! Definicion de la funcion callback para el metodo que deposita dinero en una cuenta
+int callback_Deposit(void *data, int argc, char **argv, char **azColName) {
+  cout << endl << "Deposito realizado correctamente" << endl;
+  for (int i = 0; i < argc; i++) {
+      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+  }
+  cout << endl;
+
+  return 0;
+};

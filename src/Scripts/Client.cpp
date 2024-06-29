@@ -77,7 +77,7 @@ void Client::deposit(sqlite3 *db, string denominationSRC, string denominationDST
     query = regex_replace(query, regex("\\{1\\}"), denominationDST); 
     query = regex_replace(query, regex("\\{2\\}"), to_string(quantity)); 
     sql = query.c_str();
-    rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
+    rc = sqlite3_exec(db, sql, callback_Deposit, 0, &errMsg);
     if (rc != SQLITE_OK) {
         cerr << "SQL error: " << errMsg << endl;
         sqlite3_free(errMsg);

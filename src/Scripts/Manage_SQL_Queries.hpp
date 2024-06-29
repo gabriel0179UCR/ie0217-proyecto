@@ -10,6 +10,9 @@ string read_sql_file(const string& filename);
 //! Declaracion de la funcion callback para la ejecucion de codigo de SQL general
 int callback(void *data, int argc, char **argv, char **azColName);
 
+//! Declaracion de la funcion callback que muestra la informacion general del cliente
+int callback_Get_Client_Data(void *data, int argc, char **argv, char **azColName);
+
 //! Declaracion de la funcion callback para la ejecucion de codigo de SQL que verifica si hay dinero disponible en la cuenta
 int callback_Verify_Money_Available(void *data, int argc, char **argv, char **azColName);
 
@@ -21,4 +24,7 @@ int callback_Convert_Money(void *data, int argc, char **argv, char **azColName);
 
 //! Declaracion de la funcion callback para la ejecucion de codigo de SQL que crea un nuevo cliente en la base de datos
 int callback_Create_New_Client(void *data, int argc, char **argv, char **azColName);
+
+//! Declaracion de la funcion callback para el metodo que deposita dinero en una cuenta
+int callback_Deposit(void *data, int argc, char **argv, char **azColName);
 #endif
