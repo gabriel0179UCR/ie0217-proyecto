@@ -19,12 +19,58 @@ enum ClientOptions {
     RETIRE,
     TRANSFER,
     TRANSACTIONS,
+    LOANS_MENU,
+    CDP,
     EXITSECUNDARY
 };
 
+int main_menu(){
+    int option;
+    // Menu principal
+    cout << endl << "///// Sistema de gestion bancaria /////" << endl;
+    cout << "1. Ingresar cliente" << endl;
+    cout << "2. Agregar cliente" << endl;
+    cout << "3. Salir" << endl;
+    cout << "Ingrese su opcion: ";
+    cin >> option;
+
+    return option;
+};
+
+int secundary_menu(){
+    int option;
+    cout << endl << "///// Acciones /////" << endl;
+    cout << "1. Depositar" << endl;
+    cout << "2. Retirar" << endl;
+    cout << "3. Transferir" << endl;
+    cout << "4. Menu de prestamos" << endl;
+    cout << "5. Solicitar CDP" << endl;
+    cout << "6. Salir al menu principal" << endl;
+
+    cout << "Ingrese su opcion: ";
+    cin >> option;
+
+    return option;
+};
+
+int loan_menu(){
+    int option;
+    cout << endl << "///// Acciones /////" << endl;
+    cout << "1. Informacion general de prestamos" << endl;
+    cout << "2. Solicitar prestamo" << endl;
+    cout << "3. Solicitar reporte de prestamos" << endl;
+    cout << "4. Salir al menu secundario" << endl;
+
+    cout << "Ingrese su opcion: ";
+    cin >> option;
+
+    return option;
+}
+
+
 int main() {
     int option;
-    bool exitPrincipalMenu = false;
+    bool exitMainMenu = false;
     bool exitSecundaryMenu = false;
     int clientID = 0;
     string clientName;
@@ -34,15 +80,9 @@ int main() {
     // Se establece conexion a la base de datos
     rc = sqlite3_open("Database\\banco_ie0217_db.db", &db);
 
-    while(!exitPrincipalMenu) {
+    while(!exitMainMenu) {
         // Menu principal
-        cout << endl << "///// Sistema de gestion bancaria /////" << endl;
-        cout << "1. Ingresar cliente" << endl;
-        cout << "2. Agregar cliente" << endl;
-        cout << "3. Salir" << endl;
-
-        cout << "Ingrese su opcion: ";
-        cin >> option;
+        option = main_menu();
         switch (option)
         {
         case ENTERCLIENT:
@@ -57,7 +97,7 @@ int main() {
             exitSecundaryMenu = false;
             break;
         case EXITPRINCIPAL:
-            exitPrincipalMenu = true;
+            exitMainMenu = true;
             return 0;
             break;
         default:
@@ -74,14 +114,7 @@ int main() {
             Client client(clientID);
 
             // Menu secundario
-            cout << endl << "///// Acciones /////" << endl;
-            cout << "1. Depositar" << endl;
-            cout << "2. Retirar" << endl;
-            cout << "3. Transferir" << endl;
-            cout << "4. Salir al menu principal" << endl;
-
-            cout << "Ingrese su opcion: ";
-            cin >> option;
+            option = secundary_menu();
 
             float quantity;
             string denominationSRC;
@@ -115,6 +148,14 @@ int main() {
             case TRANSACTIONS:
                 cout << "Reporte de transacciones" << endl;
                 break;
+
+            case LOANS_MENU:
+                // Menu de prestamos
+                option = loan_menu();
+                break;
+
+            case CDP:
+                break;
             
             case EXITSECUNDARY:
                 cout << "Saliendo al menu principal" << endl;
@@ -122,7 +163,6 @@ int main() {
                 break;
             }
         }
-
     }
 
     sqlite3_close(db);
