@@ -43,4 +43,7 @@ int callback_Get_Loans_Types(void *data, int argc, char **argv, char **azColName
 //! Declaracion de la funcion callback para el metodo que crea prestamos a un usuario
 int callback_Loan(void *data, int argc, char **argv, char **azColName);
 
+//! Declaracion de la funcion callback para el metodo que abona dinero a un prestamo
+int callback_Loan_Payment(void *data, int argc, char **argv, char **azColName);
+
 #endif

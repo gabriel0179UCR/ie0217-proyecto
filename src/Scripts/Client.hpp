@@ -34,7 +34,7 @@ class Client {
         void loan(sqlite3 *db, string loanType, string denomination, float quantity, int fee);
 
         //! Declaracion del metodo que permite abonar dinero a un prestamo
-        void loan_payment(sqlite3 *db, int loanID, float quantity);
+        void loan_payment(sqlite3 *db, int loanID, string denominationDST, string denominationQuantity, float quantity);
         
 };
 

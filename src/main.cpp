@@ -24,6 +24,15 @@ enum ClientOptions {
     EXITSECUNDARY
 };
 
+//! Estructura del menu de prestamos
+enum LoanOptions {
+    GENERALINFO = 1,
+    GET_LOAN,
+    PAY_LOAN,
+    LOANS_REGISTER,
+    EXITLOANMENU
+};
+
 int main_menu(){
     int option;
     // Menu principal
@@ -59,8 +68,9 @@ int loan_menu(){
     cout << endl << "///// Acciones /////" << endl;
     cout << "1. Informacion general de prestamos" << endl;
     cout << "2. Solicitar prestamo" << endl;
-    cout << "3. Solicitar reporte de prestamos" << endl;
-    cout << "4. Salir al menu secundario" << endl;
+    cout << "3. Abonar dinero a un prestamo" << endl;
+    cout << "4. Solicitar reporte de prestamos" << endl;
+    cout << "5. Salir al menu secundario" << endl;
 
     cout << "Ingrese su opcion: ";
     cin >> option;
@@ -73,9 +83,17 @@ int main() {
     int option;
     bool exitMainMenu = false;
     bool exitSecundaryMenu = false;
+    bool exitLoanMenu = false;
     int clientID = 0;
     int clientIDDest = 0;
     string clientName;
+    string loanType;
+    float quantity;
+    string denominationSRC;
+    string denominationDST;
+    string denominationQuantity;
+    int fee;
+    int loanID;
 
     sqlite3 *db;
     int rc;
@@ -118,10 +136,7 @@ int main() {
             // Menu secundario
             option = secundary_menu();
 
-            float quantity;
-            string denominationSRC;
-            string denominationDST;
-            string denominationQuantity;
+            
 
             switch (option)
             {
@@ -169,8 +184,48 @@ int main() {
                 break;
 
             case LOANS_MENU:
-                // Menu de prestamos
-                option = loan_menu();
+                while(!exitLoanMenu) {
+                    // Menu de prestamos
+                    option = loan_menu();
+
+                    switch (option) 
+                    {
+                    case GENERALINFO:
+                        cout << endl << "Informacion de prestamos" << endl;
+                        getLoansTypes(db);
+                        break;
+                    case GET_LOAN:
+                        cout << "Ingrese el tipo de prestamo: ";
+                        cin >> loanType;
+                        cout << "Ingrese la denominacion del monto: ";
+                        cin >> denominationQuantity;
+                        cout << "Ingrese la cantidad del prestamo: ";
+                        cin >> quantity;
+                        cout << "Ingrese el numero de cuotas en años: ";
+                        cin >> fee;
+                        client.loan(db, loanType, denominationQuantity, quantity, fee);
+                        break;
+                    case PAY_LOAN:
+                        cout << "Ingrese el ID del prestamo: ";
+                        cin >> loanID;
+                        cout << "Ingrese la denominacion del prestamo: ";
+                        cin >> denominationDST;
+                        cout << "Ingrese la denominacion de la cantidad a abonar: ";
+                        cin >> denominationQuantity;
+                        cout << "Ingrese la cantidad a abonar: ";
+                        cin >> quantity;
+
+                        client.loan_payment(db, loanID, denominationDST, denominationQuantity, quantity);
+                    case LOANS_REGISTER:
+                        break;
+                    case EXITLOANMENU:
+                        exitLoanMenu = true;
+                        break;
+                    default:
+                        cout << "Opcion incorrecta" << endl;
+                    }
+                }
+
                 break;
 
             case CDP:
