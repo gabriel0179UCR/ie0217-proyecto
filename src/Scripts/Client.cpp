@@ -184,3 +184,16 @@ void Client::loan_payment(sqlite3 *db, int loanID, float quantity) {
         sqlite3_free(errMsg);
     } 
 };
+
+//! Definicion de la funcion que consulta la informacion de prestamos
+void getLoansTypes(sqlite3 *db) {
+    char *errMsg = 0;
+    int rc;
+    string query = read_sql_file(LOAN_INFO);
+    const char *sql = query.c_str();
+    rc = sqlite3_exec(db, sql, callback_Get_Loans_Types, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        cerr << "SQL error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+    } 
+};

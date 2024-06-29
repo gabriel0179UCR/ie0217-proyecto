@@ -76,7 +76,7 @@ int callback_Create_New_Client(void *data, int argc, char **argv, char **azColNa
 int callback_Deposit(void *data, int argc, char **argv, char **azColName) {
   cout << endl << "Deposito realizado correctamente" << endl;
   for (int i = 0; i < argc; i++) {
-      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+    cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
   }
   cout << endl;
 
@@ -87,7 +87,7 @@ int callback_Deposit(void *data, int argc, char **argv, char **azColName) {
 int callback_Retire(void *data, int argc, char **argv, char **azColName) {
   cout << endl << "Retiro realizado correctamente" << endl;
   for (int i = 0; i < argc; i++) {
-      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+    cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
   }
   cout << endl;
 
@@ -98,7 +98,7 @@ int callback_Retire(void *data, int argc, char **argv, char **azColName) {
 int callback_Transfer(void *data, int argc, char **argv, char **azColName) {
   cout << endl << "Transferencia realizada correctamente" << endl;
   for (int i = 0; i < argc; i++) {
-      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+    cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
   }
   cout << endl;
 
@@ -108,7 +108,18 @@ int callback_Transfer(void *data, int argc, char **argv, char **azColName) {
 //! Definicion de la funcion callback para el metodo que muestra el registro de transacciones'
 int callback_Transactions(void *data, int argc, char **argv, char **azColName) {
   for (int i = 0; i < argc; i++) {
-      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+    cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+  }
+  cout << endl;
+
+  return 0;
+};
+
+
+//! Definicion de la funcion callback para la funcion que extrae informacion de prestamos
+int callback_Get_Loans_Types(void *data, int argc, char **argv, char **azColName) {
+  for (int i = 0; i < argc; i++) {
+    cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
   }
   cout << endl;
 

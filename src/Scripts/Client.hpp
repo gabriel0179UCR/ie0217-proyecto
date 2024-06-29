@@ -41,4 +41,7 @@ class Client {
 //! Declaracion de la funcion createNewClient que permite crear un nuevo cliente en la base de datos
 int createNewClient(sqlite3 *db, string nombre);
 
+//! Declaracion de la funcion que consulta la informacion de prestamos
+void getLoansTypes(sqlite3 *db);
+
 #endif // CLIENT_HPP
