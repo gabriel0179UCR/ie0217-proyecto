@@ -124,7 +124,7 @@ void Client::transfer(sqlite3 *db, string denominationSRC, int idDST, string den
     }
 }
 
-//! Definicion del metodo que consulta
+//! Definicion del metodo que consulta el registro de transacciones
 void Client::transactions(sqlite3 *db) {
     char *errMsg = 0;
     int rc;
@@ -137,3 +137,21 @@ void Client::transactions(sqlite3 *db) {
         sqlite3_free(errMsg);
     }
 }
+
+//! Definicion del metodo que crea prestamos a clientes
+void Client::loan(sqlite3 *db, string loanType, string denomination, float quantity, int fee) {
+    char *errMsg = 0;
+    int rc;
+    string query = read_sql_file(LOAN);
+    query = regex_replace(query, regex("\\{0\\}"), to_string(id));
+    query = regex_replace(query, regex("\\{1\\}"), loanType); 
+    query = regex_replace(query, regex("\\{2\\}"), denomination); 
+    query = regex_replace(query, regex("\\{3\\}"), to_string(quantity));
+    query = regex_replace(query, regex("\\{4\\}"), to_string(fee));
+    const char *sql = query.c_str();
+    rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        cerr << "SQL error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+    }  
+};

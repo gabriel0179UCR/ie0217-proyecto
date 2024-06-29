@@ -28,6 +28,9 @@ class Client {
 
         //! Declaracion del metodo que consulta el registro de transacciones
         void transactions(sqlite3 *db);
+
+        //! Declaracion del metodo que permite crear prestamos al cliente
+        void loan(sqlite3 *db, string loanType, string denomination, float quantity, int fee);
         
 };
 
