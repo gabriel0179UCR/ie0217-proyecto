@@ -43,9 +43,10 @@ int secundary_menu(){
     cout << "1. Depositar" << endl;
     cout << "2. Retirar" << endl;
     cout << "3. Transferir" << endl;
-    cout << "4. Menu de prestamos" << endl;
-    cout << "5. Solicitar CDP" << endl;
-    cout << "6. Salir al menu principal" << endl;
+    cout << "4. Registro de transacciones" << endl;
+    cout << "5. Menu de prestamos" << endl;
+    cout << "6. Solicitar CDP" << endl;
+    cout << "7. Salir al menu principal" << endl;
 
     cout << "Ingrese su opcion: ";
     cin >> option;
@@ -73,6 +74,7 @@ int main() {
     bool exitMainMenu = false;
     bool exitSecundaryMenu = false;
     int clientID = 0;
+    int clientIDDest = 0;
     string clientName;
 
     sqlite3 *db;
@@ -111,7 +113,7 @@ int main() {
                 cout << "ID de cliente no existe" << endl;
                 break;
             }
-            Client client(clientID);
+            Client client(clientID, db);
 
             // Menu secundario
             option = secundary_menu();
@@ -119,6 +121,7 @@ int main() {
             float quantity;
             string denominationSRC;
             string denominationDST;
+            string denominationQuantity;
 
             switch (option)
             {
@@ -145,8 +148,24 @@ int main() {
                     cout << "Monto a retirar es mayor al monto de la cuenta" << endl;
                 }
                 break;
+            
+            case TRANSFER:
+                cout << "Ingrese la denominacion de la cuenta fuente: ";
+                cin >> denominationSRC;
+                cout << "Ingrese el ID del cliente destino: ";
+                cin >> clientIDDest;
+                cout << "Ingrese la denominacion de la destino: ";
+                cin >> denominationDST;
+                cout << "Ingrese la denominacion de la cantidad: ";
+                cin >> denominationQuantity;
+                cout << "Ingrese la cantidad: ";
+                cin >> quantity;
+
+                client.transfer(db, denominationSRC, clientIDDest, denominationDST, denominationQuantity, quantity);
+                break;
             case TRANSACTIONS:
-                cout << "Reporte de transacciones" << endl;
+                cout << endl << "Resgistro de transacciones" << endl;
+                client.transactions(db);
                 break;
 
             case LOANS_MENU:

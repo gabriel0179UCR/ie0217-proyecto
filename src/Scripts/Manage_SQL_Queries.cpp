@@ -104,3 +104,13 @@ int callback_Transfer(void *data, int argc, char **argv, char **azColName) {
 
   return 0;
 };
+
+//! Definicion de la funcion callback para el metodo que muestra el registro de transacciones'
+int callback_Transactions(void *data, int argc, char **argv, char **azColName) {
+  for (int i = 0; i < argc; i++) {
+      cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+  }
+  cout << endl;
+
+  return 0;
+};

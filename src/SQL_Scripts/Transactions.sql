@@ -8,10 +8,12 @@ Parametros:
 */
 
 SELECT 
-	C.Nombre "Cliente"
+    T.Fecha "Fecha"
+    T.ClienteID "ID del Cliente"
+	,C.Nombre "Cliente"
     ,TT.Transaccion "Transaccion"
-    ,Cu.ID "Cuenta Fuente"
-    ,Cu2.ID "Cuenta Destino"
+    ,T.CuentaFuenteID "Cuenta Fuente"
+    ,T.CuentaDestinoID "Cuenta Destino"
     ,D.Denominacion "Denominacion"
     ,T.CantidadPrevio "Cantidad Previo"
     ,T.CantidadPosterior "Cantidad Antes"
@@ -20,7 +22,5 @@ FROM
 Transacciones T
 LEFT JOIN Clientes C ON C.ID = T.ClienteID
 LEFT JOIN TipoTransaccion TT ON TT.ID = T.TipoTransaccionID
-LEFT JOIN Cuentas Cu ON Cu.ID = T.CuentaFuenteID
-LEFT JOIN Cuentas Cu2 ON Cu2.ID = T.CuentaDestinoID
 LEFT JOIN Denominaciones D ON D.ID = T.DenominacionID
 WHERE T.ClienteID = {0};
