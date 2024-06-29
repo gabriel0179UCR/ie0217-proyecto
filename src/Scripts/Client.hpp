@@ -10,8 +10,9 @@ class Client {
     private:
         //! Atributo referenciado al ID del cliente
         int id;
+        sqlite3 *db;
     public:
-        Client(int _id);
+        Client(int _id, sqlite3 *_db);
         virtual ~Client(){} // Destructor
 
         //! Declaracion del metodo que permite convertir el dinero en funcion del tipo de cambio

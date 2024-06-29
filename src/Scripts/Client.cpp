@@ -24,7 +24,20 @@ int createNewClient(sqlite3 *db, string nombre) {
 }
 
 //! Definicion de la clase Client
-Client::Client(int _id) : id(_id){}
+Client::Client(int _id, sqlite3 *_db) : id(_id),db(_db){
+    char *errMsg = 0;
+    int rc;
+    string query;
+    const char *sql;
+    query = read_sql_file(GET_CLIENT_DATA);
+    query = regex_replace(query, regex("\\{0\\}"), to_string(id)); 
+    sql = query.c_str();
+    rc = sqlite3_exec(db, sql, callback_Get_Client_Data, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        cerr << "SQL error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+    }
+}
 
 //! Definicion del metodo que permite convertir el dinero en funcion del tipo de cambio
 float Client::convertMoney(sqlite3 *db, string denominationSRC, string denominationDST, float quantity) {

@@ -33,6 +33,18 @@ int callback(void *data, int argc, char **argv, char **azColName) {
   return 0;
 }
 
+//! Definicion de la funcion callback que muestra la informacion general del cliente
+int callback_Get_Client_Data(void *data, int argc, char **argv, char **azColName) {
+  for (int i = 0; i < argc; i=i+6) {
+    cout << endl;
+    for (int j = 0; j < 6; j++) {
+      cout << azColName[i+j] << " = " << (argv[i+j] ? argv[i+j] : "NULL") << " | ";
+    }
+    cout << endl;
+  }
+  return 0;
+}
+
 //! Definicion de la funcion callback para la ejecucion de codigo de SQL que verifica si hay dinero disponible en la cuenta
 int callback_Verify_Money_Available(void *data, int argc, char **argv, char **azColName) {
   float* result = static_cast<float *>(data);
