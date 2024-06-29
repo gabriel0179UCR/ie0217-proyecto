@@ -163,7 +163,7 @@ void Client::loan(sqlite3 *db, string loanType, string denomination, float quant
     query = regex_replace(query, regex("\\{3\\}"), to_string(quantity));
     query = regex_replace(query, regex("\\{4\\}"), to_string(fee));
     const char *sql = query.c_str();
-    rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
+    rc = sqlite3_exec(db, sql, callback_Loan, 0, &errMsg);
     if (rc != SQLITE_OK) {
         cerr << "SQL error: " << errMsg << endl;
         sqlite3_free(errMsg);

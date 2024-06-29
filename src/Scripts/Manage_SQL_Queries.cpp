@@ -125,3 +125,15 @@ int callback_Get_Loans_Types(void *data, int argc, char **argv, char **azColName
 
   return 0;
 };
+
+
+//! Definicion de la funcion callback para el metodo que crea prestamos a un usuario
+int callback_Loan(void *data, int argc, char **argv, char **azColName) {
+  cout << endl << "Prestamo creado" << endl;
+  for (int i = 0; i < argc; i++) {
+    cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+  }
+  cout << endl;
+
+  return 0;
+};
