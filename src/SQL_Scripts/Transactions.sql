@@ -9,7 +9,7 @@ Parametros:
 
 SELECT 
     T.Fecha "Fecha"
-    T.ClienteID "ID del Cliente"
+    ,T.ClienteID "ID del Cliente"
 	,C.Nombre "Cliente"
     ,TT.Transaccion "Transaccion"
     ,T.CuentaFuenteID "Cuenta Fuente"
