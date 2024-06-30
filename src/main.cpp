@@ -29,7 +29,6 @@ enum LoanOptions {
     GENERALINFO = 1,
     GET_LOAN,
     PAY_LOAN,
-    LOANS_REGISTER,
     EXITLOANMENU
 };
 
@@ -131,7 +130,7 @@ int main() {
     sqlite3 *db;
     int rc;
     // Se establece conexion a la base de datos
-    rc = sqlite3_open("Database\\banco_ie0217_db.db", &db);
+    rc = sqlite3_open("src\\Database\\banco_ie0217_db.db", &db);
 
     while(!exitMainMenu) {
         // Menu principal
