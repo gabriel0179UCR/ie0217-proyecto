@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Gestion Bancaria: Archivo de código fuente C:/Users/Gabriel/Documents/UCR/ie0217-proyecto/src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema de Gestion Bancaria
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;sqlite3.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_client_8hpp.html">Scripts\Client.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_verifier_8hpp.html">Scripts\Verifier.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// g++ main.cpp Scripts\Client.cpp Scripts\Verifier.cpp Scripts\Manage_SQL_Queries.cpp -o test -IC:\sqlite -LC:\sqlite -lsqlite3</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422">   10</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422">ClientEnter</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422aff37e2d85b425e2984a1df65389bfc25">   11</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422aff37e2d85b425e2984a1df65389bfc25">ENTERCLIENT</a> = 1,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422a28dbd8111b10b73ea5d099b5b1e0659e">   12</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422a28dbd8111b10b73ea5d099b5b1e0659e">ADDCLIENT</a>,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c">EXITPRINCIPAL</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c">   14</a></span>};</div>
+</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885">   17</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885">ClientOptions</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a">   18</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a">DEPOSIT</a> = 1,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a1532286b8fd5b667068be466e0b4b281">   19</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a1532286b8fd5b667068be466e0b4b281">RETIRE</a>,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ac1bee29cc4915cda4b613b8b95330663">   20</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ac1bee29cc4915cda4b613b8b95330663">TRANSFER</a>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ab477ca362b363fc5dd30549c20cf7a18">   21</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ab477ca362b363fc5dd30549c20cf7a18">TRANSACTIONS</a>,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885aa98e84c7ed1eb54fca65d9125ceff264">   22</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885aa98e84c7ed1eb54fca65d9125ceff264">LOANS_MENU</a>,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a7fddce1780d6e27693062a794439c2aa">   23</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a7fddce1780d6e27693062a794439c2aa">CDP</a>,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8">EXITSECUNDARY</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8">   25</a></span>};</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9">   28</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9">LoanOptions</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a8edafeda1df2cd6dd659dfe527610f36">   29</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a8edafeda1df2cd6dd659dfe527610f36">GENERALINFO</a> = 1,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a4d9ae838ee082638edb4f07d5ccae267">   30</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a4d9ae838ee082638edb4f07d5ccae267">GET_LOAN</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9afd3e30d4c8de578ba2eaee8896c671a5">   31</a></span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9afd3e30d4c8de578ba2eaee8896c671a5">PAY_LOAN</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_enumvalue" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf">EXITLOANMENU</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf">   33</a></span>};</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// Menu principal</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="main_8cpp.html#a7fe3adb8b69baff33af24e4a3a9c5048">   36</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#a7fe3adb8b69baff33af24e4a3a9c5048">main_menu</a>(){</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">int</span> option;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Menu principal</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;///// Sistema de gestion bancaria /////&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    cout &lt;&lt; <span class="stringliteral">&quot;1. Ingresar cliente&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    cout &lt;&lt; <span class="stringliteral">&quot;2. Agregar cliente&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    cout &lt;&lt; <span class="stringliteral">&quot;3. Salir&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    cout &lt;&lt; <span class="stringliteral">&quot;Ingrese su opcion: &quot;</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        cin &gt;&gt; option;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span> (cin.fail()) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            cin.clear();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            cin.ignore(100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">throw</span> <span class="stringliteral">&quot;Valor ingresado no es numerico&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* msg) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        cout &lt;&lt; msg &lt;&lt; endl;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        option = -1;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> option;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// Menu secundario</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="main_8cpp.html#ac5c89eddb8a92fb093311da8af519fa0">   60</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ac5c89eddb8a92fb093311da8af519fa0">secundary_menu</a>(){</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">int</span> option;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;///// Acciones /////&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    cout &lt;&lt; <span class="stringliteral">&quot;1. Depositar&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    cout &lt;&lt; <span class="stringliteral">&quot;2. Retirar&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    cout &lt;&lt; <span class="stringliteral">&quot;3. Transferir&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    cout &lt;&lt; <span class="stringliteral">&quot;4. Registro de transacciones&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    cout &lt;&lt; <span class="stringliteral">&quot;5. Menu de prestamos&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    cout &lt;&lt; <span class="stringliteral">&quot;6. Solicitar CDP&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    cout &lt;&lt; <span class="stringliteral">&quot;7. Salir al menu principal&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    cout &lt;&lt; <span class="stringliteral">&quot;Ingrese su opcion: &quot;</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        cin &gt;&gt; option;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">if</span> (cin.fail()) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            cin.clear();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            cin.ignore(100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">throw</span> <span class="stringliteral">&quot;Valor ingresado no es numerico&quot;</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* msg) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        cout &lt;&lt; msg &lt;&lt; endl;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        option = -1;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">return</span> option;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">// Menu de prestamos</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="main_8cpp.html#a9a1c069c92cf379a104c24f8875e77e6">   88</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#a9a1c069c92cf379a104c24f8875e77e6">loan_menu</a>(){</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">int</span> option;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;///// Menu de prestamos /////&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    cout &lt;&lt; <span class="stringliteral">&quot;1. Informacion general de prestamos&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    cout &lt;&lt; <span class="stringliteral">&quot;2. Solicitar prestamo&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    cout &lt;&lt; <span class="stringliteral">&quot;3. Abonar dinero a un prestamo&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    cout &lt;&lt; <span class="stringliteral">&quot;4. Salir al menu secundario&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    cout &lt;&lt; <span class="stringliteral">&quot;Ingrese su opcion: &quot;</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        cin &gt;&gt; option;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (cin.fail()) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            cin.clear();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            cin.ignore(100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">throw</span> <span class="stringliteral">&quot;Valor ingresado no es numerico&quot;</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* msg) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        cout &lt;&lt; msg &lt;&lt; endl;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        option = -1;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">return</span> option;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  113</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">int</span> option;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">bool</span> exitMainMenu = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">bool</span> exitSecundaryMenu = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">bool</span> exitLoanMenu = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">int</span> clientID = 0;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">int</span> clientIDDest = 0;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">string</span> clientName;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">string</span> loanType;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">float</span> quantity;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">string</span> denominationSRC;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">string</span> denominationDST;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">string</span> denominationQuantity;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">int</span> fee;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">int</span> loanID;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordtype">string</span> expiredDate;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    sqlite3 *db;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">int</span> rc;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">// Se establece conexion a la base de datos</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    rc = sqlite3_open(<span class="stringliteral">&quot;src\\Database\\banco_ie0217_db.db&quot;</span>, &amp;db);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">while</span>(!exitMainMenu) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="comment">// Menu principal</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        option = <a class="code hl_function" href="main_8cpp.html#a7fe3adb8b69baff33af24e4a3a9c5048">main_menu</a>();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">switch</span> (option)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422aff37e2d85b425e2984a1df65389bfc25">ENTERCLIENT</a>:</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el ID del cliente: &quot;</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            exitSecundaryMenu = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                cin &gt;&gt; clientID;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                <span class="keywordflow">if</span> (cin.fail()) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                    cin.clear();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                    cin.ignore(100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                    <span class="keywordflow">throw</span> <span class="stringliteral">&quot;Valor ingresado no es numerico&quot;</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* msg) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                cout &lt;&lt; msg &lt;&lt; endl;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                option = -1;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422a28dbd8111b10b73ea5d099b5b1e0659e">ADDCLIENT</a>:</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            cout &lt;&lt; <span class="stringliteral">&quot;Agregue el nombre del cliente: &quot;</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            cin &gt;&gt; clientName;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            clientID =<a class="code hl_function" href="_client_8cpp.html#a15ef29209f5a5c8e370334b8f433ff8e">createNewClient</a>(db, clientName);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            exitSecundaryMenu = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c">EXITPRINCIPAL</a>:</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            exitMainMenu = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            cout &lt;&lt; <span class="stringliteral">&quot;Opcion incorrecta&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            exitSecundaryMenu = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        };</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">while</span> (!exitSecundaryMenu){</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <a class="code hl_class" href="class_verifier.html">Verifier</a> verifier(clientID);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="keywordflow">if</span> (!verifier.<a class="code hl_function" href="class_verifier.html#ad33275d2e02bf2901fa44df9686e51f0">clientIdExist</a>(db)) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                cout &lt;&lt; <span class="stringliteral">&quot;ID de cliente no existe&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <a class="code hl_class" href="class_client.html">Client</a> client(clientID, db);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="comment">// Menu secundario</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            option = <a class="code hl_function" href="main_8cpp.html#ac5c89eddb8a92fb093311da8af519fa0">secundary_menu</a>();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">switch</span> (option)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a">DEPOSIT</a>:</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion del monto: &quot;</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                cin &gt;&gt; denominationSRC;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion de la cuenta: &quot;</span>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                cin &gt;&gt; denominationDST;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el monto a depositar: &quot;</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                cin &gt;&gt; quantity;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                client.<a class="code hl_function" href="class_client.html#a678afe803e683e5a8723a9a664eba734">deposit</a>(db, denominationSRC, denominationDST, quantity);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a1532286b8fd5b667068be466e0b4b281">RETIRE</a>:</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion del monto: &quot;</span>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                cin &gt;&gt; denominationSRC;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion de la cuenta: &quot;</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                cin &gt;&gt; denominationDST;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el monto a retirar: &quot;</span>;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                cin &gt;&gt; quantity;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                <span class="keywordflow">if</span> (verifier.<a class="code hl_function" href="class_verifier.html#a6665121e629ae52f23753535a72e9453">moneyAvailable</a>(db, denominationDST, client.<a class="code hl_function" href="class_client.html#a1513533b9eee44fbb1abaa979cf8f2da">convertMoney</a>(db, denominationSRC, denominationDST, quantity))) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                    client.<a class="code hl_function" href="class_client.html#accc5a69ee5fbfe03d645a8b7b3165a0f">retire</a>(db, denominationSRC, denominationDST, quantity);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Monto a retirar es mayor al monto de la cuenta&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ac1bee29cc4915cda4b613b8b95330663">TRANSFER</a>:</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion de la cuenta fuente: &quot;</span>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                cin &gt;&gt; denominationSRC;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el ID del cliente destino: &quot;</span>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                cin &gt;&gt; clientIDDest;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion de la destino: &quot;</span>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                cin &gt;&gt; denominationDST;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion de la cantidad: &quot;</span>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                cin &gt;&gt; denominationQuantity;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la cantidad: &quot;</span>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                cin &gt;&gt; quantity;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                client.<a class="code hl_function" href="class_client.html#aa3cc5a4b7d44052c09922cca5620dff7">transfer</a>(db, denominationSRC, clientIDDest, denominationDST, denominationQuantity, quantity);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ab477ca362b363fc5dd30549c20cf7a18">TRANSACTIONS</a>:</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;Resgistro de transacciones&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                client.<a class="code hl_function" href="class_client.html#a341d01abb2c020dccf4df4e1f3d45a86">transactions</a>(db);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885aa98e84c7ed1eb54fca65d9125ceff264">LOANS_MENU</a>:</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                <span class="keywordflow">while</span>(!exitLoanMenu) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                    <span class="comment">// Menu de prestamos</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                    option = <a class="code hl_function" href="main_8cpp.html#a9a1c069c92cf379a104c24f8875e77e6">loan_menu</a>();</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                    <span class="keywordflow">switch</span> (option) </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a8edafeda1df2cd6dd659dfe527610f36">GENERALINFO</a>:</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                        cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;Informacion de prestamos&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                        <a class="code hl_function" href="_client_8cpp.html#a4b1dc051ef93fc54255434c561f4721b">getLoansTypes</a>(db);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a4d9ae838ee082638edb4f07d5ccae267">GET_LOAN</a>:</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el tipo de prestamo: &quot;</span>;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                        cin &gt;&gt; loanType;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion del monto: &quot;</span>;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                        cin &gt;&gt; denominationQuantity;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la cantidad del prestamo: &quot;</span>;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                        cin &gt;&gt; quantity;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el numero de cuotas en aÃ±os: &quot;</span>;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                        cin &gt;&gt; fee;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                        client.<a class="code hl_function" href="class_client.html#ac1bd7ba8e3032bafdabb171d0ab14cb5">loan</a>(db, loanType, denominationQuantity, quantity, fee);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9afd3e30d4c8de578ba2eaee8896c671a5">PAY_LOAN</a>:</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Ingrese el ID del prestamo: &quot;</span>;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                        cin &gt;&gt; loanID;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion del prestamo: &quot;</span>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                        cin &gt;&gt; denominationDST;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion de la cantidad a abonar: &quot;</span>;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                        cin &gt;&gt; denominationQuantity;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la cantidad a abonar: &quot;</span>;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                        cin &gt;&gt; quantity;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                        client.<a class="code hl_function" href="class_client.html#aa6cf468e1a10b853b1729b75417b590e">loan_payment</a>(db, loanID, denominationDST, denominationQuantity, quantity);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf">EXITLOANMENU</a>:</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                        exitLoanMenu = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Opcion incorrecta&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                    }</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                }</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a7fddce1780d6e27693062a794439c2aa">CDP</a>:</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la denominacion de la cantidad: &quot;</span>;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                cin &gt;&gt; denominationQuantity;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la cantidad: &quot;</span>;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                cin &gt;&gt; quantity;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                cout &lt;&lt; <span class="stringliteral">&quot;Ingrese la fecha de expiracion: &quot;</span>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                cin &gt;&gt; expiredDate;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                client.<a class="code hl_function" href="class_client.html#a23ebb71a3f0d30ac5ae6b98db5a9a3d8">cdp</a>(db, denominationQuantity, quantity, expiredDate);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8">EXITSECUNDARY</a>:</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                cout &lt;&lt; <span class="stringliteral">&quot;Saliendo al menu principal&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                exitSecundaryMenu = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                cout &lt;&lt; <span class="stringliteral">&quot;Opcion incorrecta&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    sqlite3_close(db);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>}</div>
+</div>
+<div class="ttc" id="a_client_8cpp_html_a15ef29209f5a5c8e370334b8f433ff8e"><div class="ttname"><a href="_client_8cpp.html#a15ef29209f5a5c8e370334b8f433ff8e">createNewClient</a></div><div class="ttdeci">int createNewClient(sqlite3 *db, string nombre)</div><div class="ttdoc">Definicion de la funcion createNewClient que permite crear un nuevo cliente en la base de datos.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00012">Client.cpp:12</a></div></div>
+<div class="ttc" id="a_client_8cpp_html_a4b1dc051ef93fc54255434c561f4721b"><div class="ttname"><a href="_client_8cpp.html#a4b1dc051ef93fc54255434c561f4721b">getLoansTypes</a></div><div class="ttdeci">void getLoansTypes(sqlite3 *db)</div><div class="ttdoc">Definicion de la funcion que consulta la informacion de prestamos.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00201">Client.cpp:201</a></div></div>
+<div class="ttc" id="a_client_8hpp_html"><div class="ttname"><a href="_client_8hpp.html">Client.hpp</a></div></div>
+<div class="ttc" id="a_verifier_8hpp_html"><div class="ttname"><a href="_verifier_8hpp.html">Verifier.hpp</a></div></div>
+<div class="ttc" id="aclass_client_html"><div class="ttname"><a href="class_client.html">Client</a></div><div class="ttdoc">Declaracion de la clase Client.</div><div class="ttdef"><b>Definition</b> <a href="_client_8hpp_source.html#l00009">Client.hpp:9</a></div></div>
+<div class="ttc" id="aclass_client_html_a1513533b9eee44fbb1abaa979cf8f2da"><div class="ttname"><a href="class_client.html#a1513533b9eee44fbb1abaa979cf8f2da">Client::convertMoney</a></div><div class="ttdeci">float convertMoney(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</div><div class="ttdoc">Declaracion del metodo que permite convertir el dinero en funcion del tipo de cambio.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00046">Client.cpp:46</a></div></div>
+<div class="ttc" id="aclass_client_html_a23ebb71a3f0d30ac5ae6b98db5a9a3d8"><div class="ttname"><a href="class_client.html#a23ebb71a3f0d30ac5ae6b98db5a9a3d8">Client::cdp</a></div><div class="ttdeci">void cdp(sqlite3 *db, string denominationQuantity, float quantity, string expiredDate)</div><div class="ttdoc">Declaracion del metodo que permite crear un CDP.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00234">Client.cpp:234</a></div></div>
+<div class="ttc" id="aclass_client_html_a341d01abb2c020dccf4df4e1f3d45a86"><div class="ttname"><a href="class_client.html#a341d01abb2c020dccf4df4e1f3d45a86">Client::transactions</a></div><div class="ttdeci">void transactions(sqlite3 *db)</div><div class="ttdoc">Declaracion del metodo que consulta el registro de transacciones.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00144">Client.cpp:144</a></div></div>
+<div class="ttc" id="aclass_client_html_a678afe803e683e5a8723a9a664eba734"><div class="ttname"><a href="class_client.html#a678afe803e683e5a8723a9a664eba734">Client::deposit</a></div><div class="ttdeci">void deposit(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</div><div class="ttdoc">Declaracion del metodo que permite depositar dinero en una cuenta.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00072">Client.cpp:72</a></div></div>
+<div class="ttc" id="aclass_client_html_aa3cc5a4b7d44052c09922cca5620dff7"><div class="ttname"><a href="class_client.html#aa3cc5a4b7d44052c09922cca5620dff7">Client::transfer</a></div><div class="ttdeci">void transfer(sqlite3 *db, string denominationSRC, int idDST, string denominationDST, string denominationQuantity, float quantity)</div><div class="ttdoc">Declaracion del metodo que permite transferir entre cuentas</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00109">Client.cpp:109</a></div></div>
+<div class="ttc" id="aclass_client_html_aa6cf468e1a10b853b1729b75417b590e"><div class="ttname"><a href="class_client.html#aa6cf468e1a10b853b1729b75417b590e">Client::loan_payment</a></div><div class="ttdeci">void loan_payment(sqlite3 *db, int loanID, string denominationDST, string denominationQuantity, float quantity)</div><div class="ttdoc">Declaracion del metodo que permite abonar dinero a un prestamo.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00185">Client.cpp:185</a></div></div>
+<div class="ttc" id="aclass_client_html_ac1bd7ba8e3032bafdabb171d0ab14cb5"><div class="ttname"><a href="class_client.html#ac1bd7ba8e3032bafdabb171d0ab14cb5">Client::loan</a></div><div class="ttdeci">void loan(sqlite3 *db, string loanType, string denomination, float quantity, int fee)</div><div class="ttdoc">Declaracion del metodo que permite crear prestamos al cliente.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00158">Client.cpp:158</a></div></div>
+<div class="ttc" id="aclass_client_html_accc5a69ee5fbfe03d645a8b7b3165a0f"><div class="ttname"><a href="class_client.html#accc5a69ee5fbfe03d645a8b7b3165a0f">Client::retire</a></div><div class="ttdeci">void retire(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</div><div class="ttdoc">Declaracion del metodo que permite retirar dinero de una cuenta.</div><div class="ttdef"><b>Definition</b> <a href="_client_8cpp_source.html#l00091">Client.cpp:91</a></div></div>
+<div class="ttc" id="aclass_verifier_html"><div class="ttname"><a href="class_verifier.html">Verifier</a></div><div class="ttdoc">Declaracion de la clase Verifier.</div><div class="ttdef"><b>Definition</b> <a href="_verifier_8hpp_source.html#l00009">Verifier.hpp:9</a></div></div>
+<div class="ttc" id="aclass_verifier_html_a6665121e629ae52f23753535a72e9453"><div class="ttname"><a href="class_verifier.html#a6665121e629ae52f23753535a72e9453">Verifier::moneyAvailable</a></div><div class="ttdeci">bool moneyAvailable(sqlite3 *db, string _denomination, float _quantity)</div><div class="ttdoc">Declaracion del metodo que verifica si hay dinero disponible en la cuenta.</div><div class="ttdef"><b>Definition</b> <a href="_verifier_8cpp_source.html#l00035">Verifier.cpp:35</a></div></div>
+<div class="ttc" id="aclass_verifier_html_ad33275d2e02bf2901fa44df9686e51f0"><div class="ttname"><a href="class_verifier.html#ad33275d2e02bf2901fa44df9686e51f0">Verifier::clientIdExist</a></div><div class="ttdeci">bool clientIdExist(sqlite3 *db)</div><div class="ttdoc">Declaracion del metodo que verifica si el ID del cliente existe en la base de datos.</div><div class="ttdef"><b>Definition</b> <a href="_verifier_8cpp_source.html#l00014">Verifier.cpp:14</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a23d429676ec217f4ff5dbc899647e422"><div class="ttname"><a href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422">ClientEnter</a></div><div class="ttdeci">ClientEnter</div><div class="ttdoc">Estructura del menu principal.</div><div class="ttdef"><b>Definition</b> <a href="#l00010">main.cpp:10</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a23d429676ec217f4ff5dbc899647e422a28dbd8111b10b73ea5d099b5b1e0659e"><div class="ttname"><a href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422a28dbd8111b10b73ea5d099b5b1e0659e">ADDCLIENT</a></div><div class="ttdeci">@ ADDCLIENT</div><div class="ttdef"><b>Definition</b> <a href="#l00012">main.cpp:12</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c"><div class="ttname"><a href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c">EXITPRINCIPAL</a></div><div class="ttdeci">@ EXITPRINCIPAL</div><div class="ttdef"><b>Definition</b> <a href="#l00014">main.cpp:13</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a23d429676ec217f4ff5dbc899647e422aff37e2d85b425e2984a1df65389bfc25"><div class="ttname"><a href="main_8cpp.html#a23d429676ec217f4ff5dbc899647e422aff37e2d85b425e2984a1df65389bfc25">ENTERCLIENT</a></div><div class="ttdeci">@ ENTERCLIENT</div><div class="ttdef"><b>Definition</b> <a href="#l00011">main.cpp:11</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a7fe3adb8b69baff33af24e4a3a9c5048"><div class="ttname"><a href="main_8cpp.html#a7fe3adb8b69baff33af24e4a3a9c5048">main_menu</a></div><div class="ttdeci">int main_menu()</div><div class="ttdef"><b>Definition</b> <a href="#l00036">main.cpp:36</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a9a1c069c92cf379a104c24f8875e77e6"><div class="ttname"><a href="main_8cpp.html#a9a1c069c92cf379a104c24f8875e77e6">loan_menu</a></div><div class="ttdeci">int loan_menu()</div><div class="ttdef"><b>Definition</b> <a href="#l00088">main.cpp:88</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac5c89eddb8a92fb093311da8af519fa0"><div class="ttname"><a href="main_8cpp.html#ac5c89eddb8a92fb093311da8af519fa0">secundary_menu</a></div><div class="ttdeci">int secundary_menu()</div><div class="ttdef"><b>Definition</b> <a href="#l00060">main.cpp:60</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad5d2b8ddf987f947db790c5d6ecd1885"><div class="ttname"><a href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885">ClientOptions</a></div><div class="ttdeci">ClientOptions</div><div class="ttdoc">Estructura del menu secundario.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">main.cpp:17</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad5d2b8ddf987f947db790c5d6ecd1885a1532286b8fd5b667068be466e0b4b281"><div class="ttname"><a href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a1532286b8fd5b667068be466e0b4b281">RETIRE</a></div><div class="ttdeci">@ RETIRE</div><div class="ttdef"><b>Definition</b> <a href="#l00019">main.cpp:19</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8"><div class="ttname"><a href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8">EXITSECUNDARY</a></div><div class="ttdeci">@ EXITSECUNDARY</div><div class="ttdef"><b>Definition</b> <a href="#l00025">main.cpp:24</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad5d2b8ddf987f947db790c5d6ecd1885a7fddce1780d6e27693062a794439c2aa"><div class="ttname"><a href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a7fddce1780d6e27693062a794439c2aa">CDP</a></div><div class="ttdeci">@ CDP</div><div class="ttdef"><b>Definition</b> <a href="#l00023">main.cpp:23</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad5d2b8ddf987f947db790c5d6ecd1885aa98e84c7ed1eb54fca65d9125ceff264"><div class="ttname"><a href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885aa98e84c7ed1eb54fca65d9125ceff264">LOANS_MENU</a></div><div class="ttdeci">@ LOANS_MENU</div><div class="ttdef"><b>Definition</b> <a href="#l00022">main.cpp:22</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad5d2b8ddf987f947db790c5d6ecd1885ab477ca362b363fc5dd30549c20cf7a18"><div class="ttname"><a href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ab477ca362b363fc5dd30549c20cf7a18">TRANSACTIONS</a></div><div class="ttdeci">@ TRANSACTIONS</div><div class="ttdef"><b>Definition</b> <a href="#l00021">main.cpp:21</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad5d2b8ddf987f947db790c5d6ecd1885ac1bee29cc4915cda4b613b8b95330663"><div class="ttname"><a href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ac1bee29cc4915cda4b613b8b95330663">TRANSFER</a></div><div class="ttdeci">@ TRANSFER</div><div class="ttdef"><b>Definition</b> <a href="#l00020">main.cpp:20</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a"><div class="ttname"><a href="main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a">DEPOSIT</a></div><div class="ttdeci">@ DEPOSIT</div><div class="ttdef"><b>Definition</b> <a href="#l00018">main.cpp:18</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad7751c3fd67815b4bbcab878361f73d9"><div class="ttname"><a href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9">LoanOptions</a></div><div class="ttdeci">LoanOptions</div><div class="ttdoc">Estructura del menu de prestamos.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">main.cpp:28</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad7751c3fd67815b4bbcab878361f73d9a4d9ae838ee082638edb4f07d5ccae267"><div class="ttname"><a href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a4d9ae838ee082638edb4f07d5ccae267">GET_LOAN</a></div><div class="ttdeci">@ GET_LOAN</div><div class="ttdef"><b>Definition</b> <a href="#l00030">main.cpp:30</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf"><div class="ttname"><a href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf">EXITLOANMENU</a></div><div class="ttdeci">@ EXITLOANMENU</div><div class="ttdef"><b>Definition</b> <a href="#l00033">main.cpp:32</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad7751c3fd67815b4bbcab878361f73d9a8edafeda1df2cd6dd659dfe527610f36"><div class="ttname"><a href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a8edafeda1df2cd6dd659dfe527610f36">GENERALINFO</a></div><div class="ttdeci">@ GENERALINFO</div><div class="ttdef"><b>Definition</b> <a href="#l00029">main.cpp:29</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad7751c3fd67815b4bbcab878361f73d9afd3e30d4c8de578ba2eaee8896c671a5"><div class="ttname"><a href="main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9afd3e30d4c8de578ba2eaee8896c671a5">PAY_LOAN</a></div><div class="ttdeci">@ PAY_LOAN</div><div class="ttdef"><b>Definition</b> <a href="#l00031">main.cpp:31</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="#l00113">main.cpp:113</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

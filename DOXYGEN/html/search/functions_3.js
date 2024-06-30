@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['read_5fsql_5ffile_0',['read_sql_file',['../create__empty__db_8cpp.html#a34626254c780ee1d20401def891d5192',1,'read_sql_file(const string &amp;filename):&#160;create_empty_db.cpp'],['../_manage___s_q_l___queries_8cpp.html#a34626254c780ee1d20401def891d5192',1,'read_sql_file(const string &amp;filename):&#160;Manage_SQL_Queries.cpp'],['../_manage___s_q_l___queries_8hpp.html#a34626254c780ee1d20401def891d5192',1,'read_sql_file(const string &amp;filename):&#160;create_empty_db.cpp']]],
-  ['retire_1',['retire',['../class_client.html#accc5a69ee5fbfe03d645a8b7b3165a0f',1,'Client']]]
+  ['loan_0',['loan',['../class_client.html#ac1bd7ba8e3032bafdabb171d0ab14cb5',1,'Client']]],
+  ['loan_5fmenu_1',['loan_menu',['../main_8cpp.html#a9a1c069c92cf379a104c24f8875e77e6',1,'main.cpp']]],
+  ['loan_5fpayment_2',['loan_payment',['../class_client.html#aa6cf468e1a10b853b1729b75417b590e',1,'Client']]]
 ];

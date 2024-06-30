@@ -7,5 +7,7 @@ var searchData=
   ['ahorros_4',['Â¿Que es una cuenta que gestiona ahorros?',['../index.html#autotoc_md7',1,'']]],
   ['al_20capital_20y_20los_20intereses_20abonados_5',['Â¿Que es un reporte de prestamos? Â¿Que es el aporte al capital y los intereses abonados?',['../index.html#autotoc_md11',1,'']]],
   ['aporte_20al_20capital_20y_20los_20intereses_20abonados_6',['Â¿Que es un reporte de prestamos? Â¿Que es el aporte al capital y los intereses abonados?',['../index.html#autotoc_md11',1,'']]],
-  ['arquitectura_7',['3. Arquitectura',['../index.html#autotoc_md12',1,'']]]
+  ['arquitectura_7',['3. Arquitectura',['../index.html#autotoc_md12',1,'']]],
+  ['arquitectura1_2epng_8',['Arquitectura1.png',['../_arquitectura1_8png.html',1,'']]],
+  ['atencionclientes_2epng_9',['AtencionClientes.png',['../_atencion_clientes_8png.html',1,'']]]
 ];

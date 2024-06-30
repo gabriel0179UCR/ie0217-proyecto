@@ -25,7 +25,6 @@
   <td id="projectalign">
    <div id="projectname">Sistema de Gestion Bancaria
    </div>
-   <div id="projectbrief">Programa que permite el manejo el manejo de informacion y acciones de clientes en el banco</div>
   </td>
  </tr>
  </tbody>
@@ -78,11 +77,16 @@ $(function() {
 
 <p>Lista completa de los miembros de <a class="el" href="class_client.html">Client</a>, incluyendo todos los heredados:</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_client.html#a31587b3f7a6dd777ba59daa839d1108d">Client</a>(int _id)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_client.html#a1513533b9eee44fbb1abaa979cf8f2da">convertMoney</a>(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_client.html#a678afe803e683e5a8723a9a664eba734">deposit</a>(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_client.html#accc5a69ee5fbfe03d645a8b7b3165a0f">retire</a>(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_client.html#a897ff0f31827f7be3c661623341605ed">~Client</a>()</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_client.html#a23ebb71a3f0d30ac5ae6b98db5a9a3d8">cdp</a>(sqlite3 *db, string denominationQuantity, float quantity, string expiredDate)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_client.html#a8c7e0d8c6e37cc1b9fbf8b2b089a3559">Client</a>(int _id, sqlite3 *_db)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_client.html#a1513533b9eee44fbb1abaa979cf8f2da">convertMoney</a>(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_client.html#a678afe803e683e5a8723a9a664eba734">deposit</a>(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_client.html#ac1bd7ba8e3032bafdabb171d0ab14cb5">loan</a>(sqlite3 *db, string loanType, string denomination, float quantity, int fee)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_client.html#aa6cf468e1a10b853b1729b75417b590e">loan_payment</a>(sqlite3 *db, int loanID, string denominationDST, string denominationQuantity, float quantity)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_client.html#accc5a69ee5fbfe03d645a8b7b3165a0f">retire</a>(sqlite3 *db, string denominationSRC, string denominationDST, float quantity)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_client.html#a341d01abb2c020dccf4df4e1f3d45a86">transactions</a>(sqlite3 *db)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_client.html#aa3cc5a4b7d44052c09922cca5620dff7">transfer</a>(sqlite3 *db, string denominationSRC, int idDST, string denominationDST, string denominationQuantity, float quantity)</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_client.html#a897ff0f31827f7be3c661623341605ed">~Client</a>()</td><td class="entry"><a class="el" href="class_client.html">Client</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

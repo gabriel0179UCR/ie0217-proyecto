@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../create__empty__db_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;create_empty_db.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
-  ['moneyavailable_1',['moneyAvailable',['../class_verifier.html#a6665121e629ae52f23753535a72e9453',1,'Verifier']]]
+  ['getinterest_0',['getInterest',['../_client_8cpp.html#aad401af605b4b7b35f527ec938b73785',1,'getInterest(sqlite3 *db, string loanType):&#160;Client.cpp'],['../_client_8hpp.html#aad401af605b4b7b35f527ec938b73785',1,'getInterest(sqlite3 *db, string loanType):&#160;Client.cpp']]],
+  ['getloanstypes_1',['getLoansTypes',['../_client_8cpp.html#a4b1dc051ef93fc54255434c561f4721b',1,'getLoansTypes(sqlite3 *db):&#160;Client.cpp'],['../_client_8hpp.html#a4b1dc051ef93fc54255434c561f4721b',1,'getLoansTypes(sqlite3 *db):&#160;Client.cpp']]]
 ];

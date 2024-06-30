@@ -25,7 +25,6 @@
   <td id="projectalign">
    <div id="projectname">Sistema de Gestion Bancaria
    </div>
-   <div id="projectbrief">Programa que permite el manejo el manejo de informacion y acciones de clientes en el banco</div>
   </td>
  </tr>
  </tbody>
@@ -87,26 +86,68 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab162dd68279ca01d0010ca420298a7fd" id="r_ab162dd68279ca01d0010ca420298a7fd"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab162dd68279ca01d0010ca420298a7fd">CREATE_NEW_CLIENT</a> = &quot;.\\SQL_Scripts\\Create_New_Client.sql&quot;</td></tr>
+<tr class="memitem:ab162dd68279ca01d0010ca420298a7fd" id="r_ab162dd68279ca01d0010ca420298a7fd"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab162dd68279ca01d0010ca420298a7fd">CREATE_NEW_CLIENT</a> = &quot;.\\src\\SQL_Scripts\\Create_New_Client.sql&quot;</td></tr>
 <tr class="memdesc:ab162dd68279ca01d0010ca420298a7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de crear un cliente nuevo en la base de datos.  <br /></td></tr>
 <tr class="separator:ab162dd68279ca01d0010ca420298a7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae192ba6ba1a33ebbc56a6b7d7dca4308" id="r_ae192ba6ba1a33ebbc56a6b7d7dca4308"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae192ba6ba1a33ebbc56a6b7d7dca4308">CONVERT_MONEY</a> = &quot;.\\SQL_Scripts\\Convert_Money.sql&quot;</td></tr>
+<tr class="memitem:a726c79ee4a92780c576bc5250a260763" id="r_a726c79ee4a92780c576bc5250a260763"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a726c79ee4a92780c576bc5250a260763">GET_CLIENT_DATA</a> = &quot;.\\src\\SQL_Scripts\\Get_Client_Data.sql&quot;</td></tr>
+<tr class="memdesc:a726c79ee4a92780c576bc5250a260763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de solicitar informacion basica del cliente.  <br /></td></tr>
+<tr class="separator:a726c79ee4a92780c576bc5250a260763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae192ba6ba1a33ebbc56a6b7d7dca4308" id="r_ae192ba6ba1a33ebbc56a6b7d7dca4308"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae192ba6ba1a33ebbc56a6b7d7dca4308">CONVERT_MONEY</a> = &quot;.\\src\\SQL_Scripts\\Convert_Money.sql&quot;</td></tr>
 <tr class="memdesc:ae192ba6ba1a33ebbc56a6b7d7dca4308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de convertir el dinero en funcion del tipo de cambio.  <br /></td></tr>
 <tr class="separator:ae192ba6ba1a33ebbc56a6b7d7dca4308"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e2cc0a41c96b396cae93f013049e9ad" id="r_a0e2cc0a41c96b396cae93f013049e9ad"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e2cc0a41c96b396cae93f013049e9ad">DEPOSIT</a> = &quot;.\\SQL_Scripts\\Deposit.sql&quot;</td></tr>
+<tr class="memitem:a0e2cc0a41c96b396cae93f013049e9ad" id="r_a0e2cc0a41c96b396cae93f013049e9ad"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e2cc0a41c96b396cae93f013049e9ad">DEPOSIT</a> = &quot;.\\src\\SQL_Scripts\\Deposit.sql&quot;</td></tr>
 <tr class="memdesc:a0e2cc0a41c96b396cae93f013049e9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de depositar dinero en una cuenta.  <br /></td></tr>
 <tr class="separator:a0e2cc0a41c96b396cae93f013049e9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5956cc41810f7b564aff4c419b7bb36f" id="r_a5956cc41810f7b564aff4c419b7bb36f"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5956cc41810f7b564aff4c419b7bb36f">RETIRE</a> = &quot;.\\SQL_Scripts\\Retire.sql&quot;</td></tr>
+<tr class="memitem:a5956cc41810f7b564aff4c419b7bb36f" id="r_a5956cc41810f7b564aff4c419b7bb36f"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5956cc41810f7b564aff4c419b7bb36f">RETIRE</a> = &quot;.\\src\\SQL_Scripts\\Retire.sql&quot;</td></tr>
 <tr class="memdesc:a5956cc41810f7b564aff4c419b7bb36f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de retirar dinero de una cuenta.  <br /></td></tr>
 <tr class="separator:a5956cc41810f7b564aff4c419b7bb36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa373b06c5b9eef9a9a644960279232e0" id="r_aa373b06c5b9eef9a9a644960279232e0"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa373b06c5b9eef9a9a644960279232e0">VERIFY_CLIENTID_EXIST</a> = &quot;.\\SQL_Scripts\\Verify_ClientID_Exist.sql&quot;</td></tr>
+<tr class="memitem:aa373b06c5b9eef9a9a644960279232e0" id="r_aa373b06c5b9eef9a9a644960279232e0"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa373b06c5b9eef9a9a644960279232e0">VERIFY_CLIENTID_EXIST</a> = &quot;.\\src\\SQL_Scripts\\Verify_ClientID_Exist.sql&quot;</td></tr>
 <tr class="memdesc:aa373b06c5b9eef9a9a644960279232e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de verificar si un ID de cliente existe en la base de datos.  <br /></td></tr>
 <tr class="separator:aa373b06c5b9eef9a9a644960279232e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e1b097049afccf338ef72acf705610e" id="r_a3e1b097049afccf338ef72acf705610e"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e1b097049afccf338ef72acf705610e">VERIFY_MONEY_AVAILABLE</a> = &quot;.\\SQL_Scripts\\Verify_Money_Available.sql&quot;</td></tr>
+<tr class="memitem:a3e1b097049afccf338ef72acf705610e" id="r_a3e1b097049afccf338ef72acf705610e"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e1b097049afccf338ef72acf705610e">VERIFY_MONEY_AVAILABLE</a> = &quot;.\\src\\SQL_Scripts\\Verify_Money_Available.sql&quot;</td></tr>
 <tr class="memdesc:a3e1b097049afccf338ef72acf705610e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de verificar si se encuentra dinero disponible para retirar o transferir.  <br /></td></tr>
 <tr class="separator:a3e1b097049afccf338ef72acf705610e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0fe55e0ec67d4051898f079b6184b24" id="r_ac0fe55e0ec67d4051898f079b6184b24"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0fe55e0ec67d4051898f079b6184b24">TRANSFER</a> = &quot;.\\src\\SQL_Scripts\\Transfer.sql&quot;</td></tr>
+<tr class="memdesc:ac0fe55e0ec67d4051898f079b6184b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de transferir dinero entre dos cuentas.  <br /></td></tr>
+<tr class="separator:ac0fe55e0ec67d4051898f079b6184b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd0c8d2bb1b31afcc9379d9071c5aca" id="r_aebd0c8d2bb1b31afcc9379d9071c5aca"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebd0c8d2bb1b31afcc9379d9071c5aca">TRANSACTIONS</a> = &quot;.\\src\\SQL_Scripts\\Transactions.sql&quot;</td></tr>
+<tr class="memdesc:aebd0c8d2bb1b31afcc9379d9071c5aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de consultar el reporte de transacciones.  <br /></td></tr>
+<tr class="separator:aebd0c8d2bb1b31afcc9379d9071c5aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e8385b3d7b4ce7732e3549a98b064a" id="r_ab8e8385b3d7b4ce7732e3549a98b064a"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8e8385b3d7b4ce7732e3549a98b064a">LOAN_INFO</a> = &quot;.\\src\\SQL_Scripts\\Get_Loans_Types.sql&quot;</td></tr>
+<tr class="memdesc:ab8e8385b3d7b4ce7732e3549a98b064a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de consultar los tipos de prestamos.  <br /></td></tr>
+<tr class="separator:ab8e8385b3d7b4ce7732e3549a98b064a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5f4efd430710e58ed9aeaf88cbe4df" id="r_a2c5f4efd430710e58ed9aeaf88cbe4df"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c5f4efd430710e58ed9aeaf88cbe4df">LOAN</a> = &quot;.\\src\\SQL_Scripts\\Loan.sql&quot;</td></tr>
+<tr class="memdesc:a2c5f4efd430710e58ed9aeaf88cbe4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de crear prestamos para clientes.  <br /></td></tr>
+<tr class="separator:a2c5f4efd430710e58ed9aeaf88cbe4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73fda26a3dace94ea085ffe016392267" id="r_a73fda26a3dace94ea085ffe016392267"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73fda26a3dace94ea085ffe016392267">LOAN_PAYMENT</a> = &quot;.\\src\\SQL_Scripts\\Loan_Payment.sql&quot;</td></tr>
+<tr class="memdesc:a73fda26a3dace94ea085ffe016392267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de abonar dinero en prestamos.  <br /></td></tr>
+<tr class="separator:a73fda26a3dace94ea085ffe016392267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a1818d67ff44009adb293aff29fd9c" id="r_a55a1818d67ff44009adb293aff29fd9c"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55a1818d67ff44009adb293aff29fd9c">GET_INTEREST_LOAN</a> = &quot;.\\src\\SQL_Scripts\\Get_Interest_Loan.sql&quot;</td></tr>
+<tr class="memdesc:a55a1818d67ff44009adb293aff29fd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de consultar el interes de un tipo de prestamo.  <br /></td></tr>
+<tr class="separator:a55a1818d67ff44009adb293aff29fd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e89640dd29a40410dab5d29607a02e" id="r_ae5e89640dd29a40410dab5d29607a02e"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5e89640dd29a40410dab5d29607a02e">CDP</a> = &quot;.\\src\\SQL_Scripts\\CDP.sql&quot;</td></tr>
+<tr class="memdesc:ae5e89640dd29a40410dab5d29607a02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigo de SQL que se encarga de crear CDPs.  <br /></td></tr>
+<tr class="separator:ae5e89640dd29a40410dab5d29607a02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de variables</h2>
+<a id="ae5e89640dd29a40410dab5d29607a02e" name="ae5e89640dd29a40410dab5d29607a02e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e89640dd29a40410dab5d29607a02e">&#9670;&#160;</a></span>CDP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string CDP = &quot;.\\src\\SQL_Scripts\\CDP.sql&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigo de SQL que se encarga de crear CDPs. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00047">47</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ae192ba6ba1a33ebbc56a6b7d7dca4308" name="ae192ba6ba1a33ebbc56a6b7d7dca4308"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae192ba6ba1a33ebbc56a6b7d7dca4308">&#9670;&#160;</a></span>CONVERT_MONEY</h2>
 
@@ -114,12 +155,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const string CONVERT_MONEY = &quot;.\\SQL_Scripts\\Convert_Money.sql&quot;</td>
+          <td class="memname">const string CONVERT_MONEY = &quot;.\\src\\SQL_Scripts\\Convert_Money.sql&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Codigo de SQL que se encarga de convertir el dinero en funcion del tipo de cambio. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00014">14</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
 
 </div>
 </div>
@@ -130,12 +173,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const string CREATE_NEW_CLIENT = &quot;.\\SQL_Scripts\\Create_New_Client.sql&quot;</td>
+          <td class="memname">const string CREATE_NEW_CLIENT = &quot;.\\src\\SQL_Scripts\\Create_New_Client.sql&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Codigo de SQL que se encarga de crear un cliente nuevo en la base de datos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00008">8</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
 
 </div>
 </div>
@@ -146,12 +191,104 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const string DEPOSIT = &quot;.\\SQL_Scripts\\Deposit.sql&quot;</td>
+          <td class="memname">const string DEPOSIT = &quot;.\\src\\SQL_Scripts\\Deposit.sql&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Codigo de SQL que se encarga de depositar dinero en una cuenta. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00017">17</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a726c79ee4a92780c576bc5250a260763" name="a726c79ee4a92780c576bc5250a260763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a726c79ee4a92780c576bc5250a260763">&#9670;&#160;</a></span>GET_CLIENT_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string GET_CLIENT_DATA = &quot;.\\src\\SQL_Scripts\\Get_Client_Data.sql&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigo de SQL que se encarga de solicitar informacion basica del cliente. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00011">11</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a55a1818d67ff44009adb293aff29fd9c" name="a55a1818d67ff44009adb293aff29fd9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a1818d67ff44009adb293aff29fd9c">&#9670;&#160;</a></span>GET_INTEREST_LOAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string GET_INTEREST_LOAN = &quot;.\\src\\SQL_Scripts\\Get_Interest_Loan.sql&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigo de SQL que se encarga de consultar el interes de un tipo de prestamo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00044">44</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2c5f4efd430710e58ed9aeaf88cbe4df" name="a2c5f4efd430710e58ed9aeaf88cbe4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c5f4efd430710e58ed9aeaf88cbe4df">&#9670;&#160;</a></span>LOAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string LOAN = &quot;.\\src\\SQL_Scripts\\Loan.sql&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigo de SQL que se encarga de crear prestamos para clientes. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00038">38</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab8e8385b3d7b4ce7732e3549a98b064a" name="ab8e8385b3d7b4ce7732e3549a98b064a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e8385b3d7b4ce7732e3549a98b064a">&#9670;&#160;</a></span>LOAN_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string LOAN_INFO = &quot;.\\src\\SQL_Scripts\\Get_Loans_Types.sql&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigo de SQL que se encarga de consultar los tipos de prestamos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00035">35</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a73fda26a3dace94ea085ffe016392267" name="a73fda26a3dace94ea085ffe016392267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73fda26a3dace94ea085ffe016392267">&#9670;&#160;</a></span>LOAN_PAYMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string LOAN_PAYMENT = &quot;.\\src\\SQL_Scripts\\Loan_Payment.sql&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigo de SQL que se encarga de abonar dinero en prestamos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00041">41</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
 
 </div>
 </div>
@@ -162,12 +299,50 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const string RETIRE = &quot;.\\SQL_Scripts\\Retire.sql&quot;</td>
+          <td class="memname">const string RETIRE = &quot;.\\src\\SQL_Scripts\\Retire.sql&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Codigo de SQL que se encarga de retirar dinero de una cuenta. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00020">20</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aebd0c8d2bb1b31afcc9379d9071c5aca" name="aebd0c8d2bb1b31afcc9379d9071c5aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd0c8d2bb1b31afcc9379d9071c5aca">&#9670;&#160;</a></span>TRANSACTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string TRANSACTIONS = &quot;.\\src\\SQL_Scripts\\Transactions.sql&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigo de SQL que se encarga de consultar el reporte de transacciones. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00032">32</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac0fe55e0ec67d4051898f079b6184b24" name="ac0fe55e0ec67d4051898f079b6184b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0fe55e0ec67d4051898f079b6184b24">&#9670;&#160;</a></span>TRANSFER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string TRANSFER = &quot;.\\src\\SQL_Scripts\\Transfer.sql&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigo de SQL que se encarga de transferir dinero entre dos cuentas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00029">29</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
 
 </div>
 </div>
@@ -178,12 +353,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const string VERIFY_CLIENTID_EXIST = &quot;.\\SQL_Scripts\\Verify_ClientID_Exist.sql&quot;</td>
+          <td class="memname">const string VERIFY_CLIENTID_EXIST = &quot;.\\src\\SQL_Scripts\\Verify_ClientID_Exist.sql&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Codigo de SQL que se encarga de verificar si un ID de cliente existe en la base de datos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00023">23</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
 
 </div>
 </div>
@@ -194,12 +371,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const string VERIFY_MONEY_AVAILABLE = &quot;.\\SQL_Scripts\\Verify_Money_Available.sql&quot;</td>
+          <td class="memname">const string VERIFY_MONEY_AVAILABLE = &quot;.\\src\\SQL_Scripts\\Verify_Money_Available.sql&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Codigo de SQL que se encarga de verificar si se encuentra dinero disponible para retirar o transferir. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_s_q_l___script___names_8hpp_source.html#l00026">26</a> del archivo <a class="el" href="_s_q_l___script___names_8hpp_source.html">SQL_Script_Names.hpp</a>.</p>
 
 </div>
 </div>

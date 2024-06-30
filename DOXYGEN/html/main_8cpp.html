@@ -25,7 +25,6 @@
   <td id="projectalign">
    <div id="projectname">Sistema de Gestion Bancaria
    </div>
-   <div id="projectbrief">Programa que permite el manejo el manejo de informacion y acciones de clientes en el banco</div>
   </td>
  </tr>
  </tbody>
@@ -87,23 +86,46 @@ $(function() {
 <code>#include &lt;sqlite3.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_client_8hpp_source.html">Scripts\Client.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_verifier_8hpp_source.html">Scripts\Verifier.hpp</a>&quot;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="main_8cpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumeraciones</h2></td></tr>
 <tr class="memitem:a23d429676ec217f4ff5dbc899647e422" id="r_a23d429676ec217f4ff5dbc899647e422"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23d429676ec217f4ff5dbc899647e422">ClientEnter</a> { <a class="el" href="#a23d429676ec217f4ff5dbc899647e422aff37e2d85b425e2984a1df65389bfc25">ENTERCLIENT</a> = 1
 , <a class="el" href="#a23d429676ec217f4ff5dbc899647e422a28dbd8111b10b73ea5d099b5b1e0659e">ADDCLIENT</a>
-, <a class="el" href="#a23d429676ec217f4ff5dbc899647e422a7a10b5d68d31711288e1fe0fa17dbf4f">EXIT</a>
+, <a class="el" href="#a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c">EXITPRINCIPAL</a>
  }</td></tr>
 <tr class="memdesc:a23d429676ec217f4ff5dbc899647e422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura del menu principal.  <a href="#a23d429676ec217f4ff5dbc899647e422">Más...</a><br /></td></tr>
 <tr class="separator:a23d429676ec217f4ff5dbc899647e422"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5d2b8ddf987f947db790c5d6ecd1885" id="r_ad5d2b8ddf987f947db790c5d6ecd1885"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885">ClientOptions</a> { <a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a">DEPOSIT</a> = 1
+<tr class="memitem:ad5d2b8ddf987f947db790c5d6ecd1885" id="r_ad5d2b8ddf987f947db790c5d6ecd1885"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885">ClientOptions</a> { <br />
+&#160;&#160;<a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a">DEPOSIT</a> = 1
 , <a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885a1532286b8fd5b667068be466e0b4b281">RETIRE</a>
+, <a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885ac1bee29cc4915cda4b613b8b95330663">TRANSFER</a>
+, <a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885ab477ca362b363fc5dd30549c20cf7a18">TRANSACTIONS</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885aa98e84c7ed1eb54fca65d9125ceff264">LOANS_MENU</a>
+, <a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885a7fddce1780d6e27693062a794439c2aa">CDP</a>
+, <a class="el" href="#ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8">EXITSECUNDARY</a>
+<br />
  }</td></tr>
 <tr class="memdesc:ad5d2b8ddf987f947db790c5d6ecd1885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura del menu secundario.  <a href="#ad5d2b8ddf987f947db790c5d6ecd1885">Más...</a><br /></td></tr>
 <tr class="separator:ad5d2b8ddf987f947db790c5d6ecd1885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7751c3fd67815b4bbcab878361f73d9" id="r_ad7751c3fd67815b4bbcab878361f73d9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7751c3fd67815b4bbcab878361f73d9">LoanOptions</a> { <a class="el" href="#ad7751c3fd67815b4bbcab878361f73d9a8edafeda1df2cd6dd659dfe527610f36">GENERALINFO</a> = 1
+, <a class="el" href="#ad7751c3fd67815b4bbcab878361f73d9a4d9ae838ee082638edb4f07d5ccae267">GET_LOAN</a>
+, <a class="el" href="#ad7751c3fd67815b4bbcab878361f73d9afd3e30d4c8de578ba2eaee8896c671a5">PAY_LOAN</a>
+, <a class="el" href="#ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf">EXITLOANMENU</a>
+ }</td></tr>
+<tr class="memdesc:ad7751c3fd67815b4bbcab878361f73d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura del menu de prestamos.  <a href="#ad7751c3fd67815b4bbcab878361f73d9">Más...</a><br /></td></tr>
+<tr class="separator:ad7751c3fd67815b4bbcab878361f73d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
+<tr class="memitem:a7fe3adb8b69baff33af24e4a3a9c5048" id="r_a7fe3adb8b69baff33af24e4a3a9c5048"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fe3adb8b69baff33af24e4a3a9c5048">main_menu</a> ()</td></tr>
+<tr class="separator:a7fe3adb8b69baff33af24e4a3a9c5048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c89eddb8a92fb093311da8af519fa0" id="r_ac5c89eddb8a92fb093311da8af519fa0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5c89eddb8a92fb093311da8af519fa0">secundary_menu</a> ()</td></tr>
+<tr class="separator:ac5c89eddb8a92fb093311da8af519fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1c069c92cf379a104c24f8875e77e6" id="r_a9a1c069c92cf379a104c24f8875e77e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a1c069c92cf379a104c24f8875e77e6">loan_menu</a> ()</td></tr>
+<tr class="separator:a9a1c069c92cf379a104c24f8875e77e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -124,8 +146,10 @@ Funciones</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a23d429676ec217f4ff5dbc899647e422aff37e2d85b425e2984a1df65389bfc25" name="a23d429676ec217f4ff5dbc899647e422aff37e2d85b425e2984a1df65389bfc25"></a>ENTERCLIENT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a23d429676ec217f4ff5dbc899647e422a28dbd8111b10b73ea5d099b5b1e0659e" name="a23d429676ec217f4ff5dbc899647e422a28dbd8111b10b73ea5d099b5b1e0659e"></a>ADDCLIENT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a23d429676ec217f4ff5dbc899647e422a7a10b5d68d31711288e1fe0fa17dbf4f" name="a23d429676ec217f4ff5dbc899647e422a7a10b5d68d31711288e1fe0fa17dbf4f"></a>EXIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c" name="a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c"></a>EXITPRINCIPAL&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8cpp_source.html#l00010">10</a> del archivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -145,11 +169,61 @@ Funciones</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a" name="ad5d2b8ddf987f947db790c5d6ecd1885ae83605eae5afe45f74243564b695470a"></a>DEPOSIT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ad5d2b8ddf987f947db790c5d6ecd1885a1532286b8fd5b667068be466e0b4b281" name="ad5d2b8ddf987f947db790c5d6ecd1885a1532286b8fd5b667068be466e0b4b281"></a>RETIRE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad5d2b8ddf987f947db790c5d6ecd1885ac1bee29cc4915cda4b613b8b95330663" name="ad5d2b8ddf987f947db790c5d6ecd1885ac1bee29cc4915cda4b613b8b95330663"></a>TRANSFER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad5d2b8ddf987f947db790c5d6ecd1885ab477ca362b363fc5dd30549c20cf7a18" name="ad5d2b8ddf987f947db790c5d6ecd1885ab477ca362b363fc5dd30549c20cf7a18"></a>TRANSACTIONS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad5d2b8ddf987f947db790c5d6ecd1885aa98e84c7ed1eb54fca65d9125ceff264" name="ad5d2b8ddf987f947db790c5d6ecd1885aa98e84c7ed1eb54fca65d9125ceff264"></a>LOANS_MENU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad5d2b8ddf987f947db790c5d6ecd1885a7fddce1780d6e27693062a794439c2aa" name="ad5d2b8ddf987f947db790c5d6ecd1885a7fddce1780d6e27693062a794439c2aa"></a>CDP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8" name="ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8"></a>EXITSECUNDARY&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8cpp_source.html#l00017">17</a> del archivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad7751c3fd67815b4bbcab878361f73d9" name="ad7751c3fd67815b4bbcab878361f73d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7751c3fd67815b4bbcab878361f73d9">&#9670;&#160;</a></span>LoanOptions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ad7751c3fd67815b4bbcab878361f73d9">LoanOptions</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estructura del menu de prestamos. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="ad7751c3fd67815b4bbcab878361f73d9a8edafeda1df2cd6dd659dfe527610f36" name="ad7751c3fd67815b4bbcab878361f73d9a8edafeda1df2cd6dd659dfe527610f36"></a>GENERALINFO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7751c3fd67815b4bbcab878361f73d9a4d9ae838ee082638edb4f07d5ccae267" name="ad7751c3fd67815b4bbcab878361f73d9a4d9ae838ee082638edb4f07d5ccae267"></a>GET_LOAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7751c3fd67815b4bbcab878361f73d9afd3e30d4c8de578ba2eaee8896c671a5" name="ad7751c3fd67815b4bbcab878361f73d9afd3e30d4c8de578ba2eaee8896c671a5"></a>PAY_LOAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf" name="ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf"></a>EXITLOANMENU&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8cpp_source.html#l00028">28</a> del archivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentación de funciones</h2>
+<a id="a9a1c069c92cf379a104c24f8875e77e6" name="a9a1c069c92cf379a104c24f8875e77e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a1c069c92cf379a104c24f8875e77e6">&#9670;&#160;</a></span>loan_menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int loan_menu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8cpp_source.html#l00088">88</a> del archivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
 
@@ -164,6 +238,46 @@ Funciones</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8cpp_source.html#l00113">113</a> del archivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7fe3adb8b69baff33af24e4a3a9c5048" name="a7fe3adb8b69baff33af24e4a3a9c5048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe3adb8b69baff33af24e4a3a9c5048">&#9670;&#160;</a></span>main_menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main_menu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8cpp_source.html#l00036">36</a> del archivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac5c89eddb8a92fb093311da8af519fa0" name="ac5c89eddb8a92fb093311da8af519fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5c89eddb8a92fb093311da8af519fa0">&#9670;&#160;</a></span>secundary_menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int secundary_menu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8cpp_source.html#l00060">60</a> del archivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

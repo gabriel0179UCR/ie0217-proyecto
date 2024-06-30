@@ -25,7 +25,6 @@
   <td id="projectalign">
    <div id="projectname">Sistema de Gestion Bancaria
    </div>
-   <div id="projectbrief">Programa que permite el manejo el manejo de informacion y acciones de clientes en el banco</div>
   </td>
  </tr>
  </tbody>
@@ -86,7 +85,9 @@ $(function() {
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &quot;<a class="el" href="_verifier_8hpp_source.html">Verifier.hpp</a>&quot;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="_manage___s_q_l___queries_8cpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:a34626254c780ee1d20401def891d5192" id="r_a34626254c780ee1d20401def891d5192"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34626254c780ee1d20401def891d5192">read_sql_file</a> (const string &amp;filename)</td></tr>
@@ -95,6 +96,9 @@ Funciones</h2></td></tr>
 <tr class="memitem:afe15cff2196f484e76df8349f0487a49" id="r_afe15cff2196f484e76df8349f0487a49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe15cff2196f484e76df8349f0487a49">callback</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
 <tr class="memdesc:afe15cff2196f484e76df8349f0487a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para la ejecucion de codigo de SQL general.  <br /></td></tr>
 <tr class="separator:afe15cff2196f484e76df8349f0487a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354f4a05b2fb78819967fd16051ff332" id="r_a354f4a05b2fb78819967fd16051ff332"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a354f4a05b2fb78819967fd16051ff332">callback_Get_Client_Data</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:a354f4a05b2fb78819967fd16051ff332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback que muestra la informacion general del cliente.  <br /></td></tr>
+<tr class="separator:a354f4a05b2fb78819967fd16051ff332"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78565fb0a23c1bf5726b3ed2b03e9ff2" id="r_a78565fb0a23c1bf5726b3ed2b03e9ff2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78565fb0a23c1bf5726b3ed2b03e9ff2">callback_Verify_Money_Available</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
 <tr class="memdesc:a78565fb0a23c1bf5726b3ed2b03e9ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para la ejecucion de codigo de SQL que verifica si hay dinero disponible en la cuenta.  <br /></td></tr>
 <tr class="separator:a78565fb0a23c1bf5726b3ed2b03e9ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,6 +111,33 @@ Funciones</h2></td></tr>
 <tr class="memitem:a6e3fcfb5c39ca474e7f68fd586503fe2" id="r_a6e3fcfb5c39ca474e7f68fd586503fe2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e3fcfb5c39ca474e7f68fd586503fe2">callback_Create_New_Client</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
 <tr class="memdesc:a6e3fcfb5c39ca474e7f68fd586503fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para la ejecucion de codigo de SQL que crea un nuevo cliente en la base de datos.  <br /></td></tr>
 <tr class="separator:a6e3fcfb5c39ca474e7f68fd586503fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8353ea3ba424f083bf57e4d314ddca" id="r_a5d8353ea3ba424f083bf57e4d314ddca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d8353ea3ba424f083bf57e4d314ddca">callback_Deposit</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:a5d8353ea3ba424f083bf57e4d314ddca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para el metodo que deposita dinero en una cuenta.  <br /></td></tr>
+<tr class="separator:a5d8353ea3ba424f083bf57e4d314ddca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe01a3b0b79981710629cebc07043b24" id="r_abe01a3b0b79981710629cebc07043b24"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe01a3b0b79981710629cebc07043b24">callback_Retire</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:abe01a3b0b79981710629cebc07043b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para el metodo que retira dinero en una cuenta.  <br /></td></tr>
+<tr class="separator:abe01a3b0b79981710629cebc07043b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24d2f5f486780d09b8d326d1300d02cd" id="r_a24d2f5f486780d09b8d326d1300d02cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24d2f5f486780d09b8d326d1300d02cd">callback_Transfer</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:a24d2f5f486780d09b8d326d1300d02cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para el metodo que transfiere dinero de una cuenta a otra.  <br /></td></tr>
+<tr class="separator:a24d2f5f486780d09b8d326d1300d02cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1599ebe2246a41a4dd59b86d3bb25efb" id="r_a1599ebe2246a41a4dd59b86d3bb25efb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1599ebe2246a41a4dd59b86d3bb25efb">callback_Transactions</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:a1599ebe2246a41a4dd59b86d3bb25efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para el metodo que muestra el registro de transacciones'.  <br /></td></tr>
+<tr class="separator:a1599ebe2246a41a4dd59b86d3bb25efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9df2e774e5cd126ec4bbd8301761c88" id="r_ac9df2e774e5cd126ec4bbd8301761c88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9df2e774e5cd126ec4bbd8301761c88">callback_Get_Loans_Types</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:ac9df2e774e5cd126ec4bbd8301761c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para la funcion que extrae informacion de prestamos.  <br /></td></tr>
+<tr class="separator:ac9df2e774e5cd126ec4bbd8301761c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e0a258e85e2aaac6e2e5c9909e5cdd" id="r_a75e0a258e85e2aaac6e2e5c9909e5cdd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75e0a258e85e2aaac6e2e5c9909e5cdd">callback_Loan</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:a75e0a258e85e2aaac6e2e5c9909e5cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para el metodo que crea prestamos a un usuario.  <br /></td></tr>
+<tr class="separator:a75e0a258e85e2aaac6e2e5c9909e5cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c23f3147275b54c46c95ec09af49825" id="r_a1c23f3147275b54c46c95ec09af49825"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c23f3147275b54c46c95ec09af49825">callback_Loan_Payment</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:a1c23f3147275b54c46c95ec09af49825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para el metodo que abona dinero a un prestamo.  <br /></td></tr>
+<tr class="separator:a1c23f3147275b54c46c95ec09af49825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f8569a29e47b68b784c79a40cebd548" id="r_a3f8569a29e47b68b784c79a40cebd548"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f8569a29e47b68b784c79a40cebd548">callback_Get_Interest_Loan</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:a3f8569a29e47b68b784c79a40cebd548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicion de la funcion callback para la funcion que consulta el interes de un prestamo.  <br /></td></tr>
+<tr class="separator:a3f8569a29e47b68b784c79a40cebd548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea1ff94346dbd3b34966f6e8f84960c" id="r_a4ea1ff94346dbd3b34966f6e8f84960c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ea1ff94346dbd3b34966f6e8f84960c">callback_CDP</a> (void *data, int argc, char **argv, char **azColName)</td></tr>
+<tr class="memdesc:a4ea1ff94346dbd3b34966f6e8f84960c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaracion de la funcion callback para el metodo que crea CDPs.  <br /></td></tr>
+<tr class="separator:a4ea1ff94346dbd3b34966f6e8f84960c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de funciones</h2>
 <a id="afe15cff2196f484e76df8349f0487a49" name="afe15cff2196f484e76df8349f0487a49"></a>
@@ -140,6 +171,43 @@ Funciones</h2></td></tr>
 
 <p>Definicion de la funcion callback para la ejecucion de codigo de SQL general. </p>
 <p>Declaracion de la funcion callback para la ejecucion de codigo de SQL general. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00029">29</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4ea1ff94346dbd3b34966f6e8f84960c" name="a4ea1ff94346dbd3b34966f6e8f84960c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea1ff94346dbd3b34966f6e8f84960c">&#9670;&#160;</a></span>callback_CDP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_CDP </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declaracion de la funcion callback para el metodo que crea CDPs. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00166">166</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
 
 </div>
 </div>
@@ -175,6 +243,8 @@ Funciones</h2></td></tr>
 <p>Definicion de la funcion callback para la ejecucion de codigo de SQL que convierte el dinero segun el tipo de cambio. </p>
 <p>Declaracion de la funcion callback para la ejecucion de codigo de SQL que convierte el dinero segun el tipo de cambio. </p>
 
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00062">62</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a6e3fcfb5c39ca474e7f68fd586503fe2" name="a6e3fcfb5c39ca474e7f68fd586503fe2"></a>
@@ -208,6 +278,332 @@ Funciones</h2></td></tr>
 
 <p>Definicion de la funcion callback para la ejecucion de codigo de SQL que crea un nuevo cliente en la base de datos. </p>
 <p>Declaracion de la funcion callback para la ejecucion de codigo de SQL que crea un nuevo cliente en la base de datos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00069">69</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5d8353ea3ba424f083bf57e4d314ddca" name="a5d8353ea3ba424f083bf57e4d314ddca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d8353ea3ba424f083bf57e4d314ddca">&#9670;&#160;</a></span>callback_Deposit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Deposit </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback para el metodo que deposita dinero en una cuenta. </p>
+<p>Declaracion de la funcion callback para el metodo que deposita dinero en una cuenta. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00076">76</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a354f4a05b2fb78819967fd16051ff332" name="a354f4a05b2fb78819967fd16051ff332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a354f4a05b2fb78819967fd16051ff332">&#9670;&#160;</a></span>callback_Get_Client_Data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Get_Client_Data </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback que muestra la informacion general del cliente. </p>
+<p>Declaracion de la funcion callback que muestra la informacion general del cliente. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00037">37</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3f8569a29e47b68b784c79a40cebd548" name="a3f8569a29e47b68b784c79a40cebd548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8569a29e47b68b784c79a40cebd548">&#9670;&#160;</a></span>callback_Get_Interest_Loan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Get_Interest_Loan </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback para la funcion que consulta el interes de un prestamo. </p>
+<p>Declaracion de la funcion callback para la funcion que consulta el interes de un prestamo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00159">159</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac9df2e774e5cd126ec4bbd8301761c88" name="ac9df2e774e5cd126ec4bbd8301761c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9df2e774e5cd126ec4bbd8301761c88">&#9670;&#160;</a></span>callback_Get_Loans_Types()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Get_Loans_Types </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback para la funcion que extrae informacion de prestamos. </p>
+<p>Declaracion de la funcion callback para la funcion que extrae informacion de prestamos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00124">124</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a75e0a258e85e2aaac6e2e5c9909e5cdd" name="a75e0a258e85e2aaac6e2e5c9909e5cdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e0a258e85e2aaac6e2e5c9909e5cdd">&#9670;&#160;</a></span>callback_Loan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Loan </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback para el metodo que crea prestamos a un usuario. </p>
+<p>Declaracion de la funcion callback para el metodo que crea prestamos a un usuario. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00135">135</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1c23f3147275b54c46c95ec09af49825" name="a1c23f3147275b54c46c95ec09af49825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c23f3147275b54c46c95ec09af49825">&#9670;&#160;</a></span>callback_Loan_Payment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Loan_Payment </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback para el metodo que abona dinero a un prestamo. </p>
+<p>Declaracion de la funcion callback para el metodo que abona dinero a un prestamo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00147">147</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abe01a3b0b79981710629cebc07043b24" name="abe01a3b0b79981710629cebc07043b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe01a3b0b79981710629cebc07043b24">&#9670;&#160;</a></span>callback_Retire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Retire </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback para el metodo que retira dinero en una cuenta. </p>
+<p>Declaracion de la funcion callback para el metodo que retira dinero en una cuenta. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00087">87</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1599ebe2246a41a4dd59b86d3bb25efb" name="a1599ebe2246a41a4dd59b86d3bb25efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1599ebe2246a41a4dd59b86d3bb25efb">&#9670;&#160;</a></span>callback_Transactions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Transactions </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback para el metodo que muestra el registro de transacciones'. </p>
+<p>Declaracion de la funcion callback para el metodo que muestra el registro de transacciones. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00109">109</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a24d2f5f486780d09b8d326d1300d02cd" name="a24d2f5f486780d09b8d326d1300d02cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d2f5f486780d09b8d326d1300d02cd">&#9670;&#160;</a></span>callback_Transfer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int callback_Transfer </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>azColName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicion de la funcion callback para el metodo que transfiere dinero de una cuenta a otra. </p>
+<p>Declaracion de la funcion callback para el metodo que transfiere dinero de una cuenta a otra. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00098">98</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
 
 </div>
 </div>
@@ -243,6 +639,8 @@ Funciones</h2></td></tr>
 <p>Definicion de la funcion callback para la ejecucion de codigo de SQL que verifica si existe el ID del cliente ingresado. </p>
 <p>Declaracion de la funcion callback para la ejecucion de codigo de SQL que verifica si existe el ID del cliente ingresado. </p>
 
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00055">55</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a78565fb0a23c1bf5726b3ed2b03e9ff2" name="a78565fb0a23c1bf5726b3ed2b03e9ff2"></a>
@@ -277,6 +675,8 @@ Funciones</h2></td></tr>
 <p>Definicion de la funcion callback para la ejecucion de codigo de SQL que verifica si hay dinero disponible en la cuenta. </p>
 <p>Declaracion de la funcion callback para la ejecucion de codigo de SQL que verifica si hay dinero disponible en la cuenta. </p>
 
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00048">48</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a34626254c780ee1d20401def891d5192" name="a34626254c780ee1d20401def891d5192"></a>
@@ -296,6 +696,8 @@ Funciones</h2></td></tr>
 
 <p>Definicion de la funcion que permite almacenar el codigo de SQL en un string. </p>
 <p>Declaracion de la funcion que permite almacenar el codigo de SQL en un string. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_manage___s_q_l___queries_8cpp_source.html#l00009">9</a> del archivo <a class="el" href="_manage___s_q_l___queries_8cpp_source.html">Manage_SQL_Queries.cpp</a>.</p>
 
 </div>
 </div>

@@ -9,6 +9,9 @@ var searchData=
   ['es_20una_20cuenta_20que_20gestiona_20ahorros_6',['Â¿Que es una cuenta que gestiona ahorros?',['../index.html#autotoc_md7',1,'']]],
   ['es_20una_20transaccion_7',['Â¿Que es una transaccion?',['../index.html#autotoc_md10',1,'']]],
   ['esquema_20de_20base_20de_20datos_8',['4. Esquema de base de datos',['../index.html#autotoc_md13',1,'']]],
-  ['estructura_20general_9',['Estructura general',['../index.html#autotoc_md1',1,'']]],
-  ['exit_10',['EXIT',['../main_8cpp.html#a23d429676ec217f4ff5dbc899647e422a7a10b5d68d31711288e1fe0fa17dbf4f',1,'main.cpp']]]
+  ['esquemabasedatos_2epng_9',['EsquemaBaseDatos.png',['../_esquema_base_datos_8png.html',1,'']]],
+  ['estructura_20general_10',['Estructura general',['../index.html#autotoc_md1',1,'']]],
+  ['exitloanmenu_11',['EXITLOANMENU',['../main_8cpp.html#ad7751c3fd67815b4bbcab878361f73d9a76b51fa4fbb5048d1bcdeb5a63505cdf',1,'main.cpp']]],
+  ['exitprincipal_12',['EXITPRINCIPAL',['../main_8cpp.html#a23d429676ec217f4ff5dbc899647e422af05565d8d348fc252095327ac839da4c',1,'main.cpp']]],
+  ['exitsecundary_13',['EXITSECUNDARY',['../main_8cpp.html#ad5d2b8ddf987f947db790c5d6ecd1885a59ee065d96818a454cc0a06b91f5f0d8',1,'main.cpp']]]
 ];
