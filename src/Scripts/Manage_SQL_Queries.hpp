@@ -49,4 +49,7 @@ int callback_Loan_Payment(void *data, int argc, char **argv, char **azColName);
 //! Declaracion de la funcion callback para la funcion que consulta el interes de un prestamo
 int callback_Get_Interest_Loan(void *data, int argc, char **argv, char **azColName);
 
+//! Declaracion de la funcion callback para el metodo que crea CDPs
+int callback_CDP(void *data, int argc, char **argv, char **azColName);
+
 #endif

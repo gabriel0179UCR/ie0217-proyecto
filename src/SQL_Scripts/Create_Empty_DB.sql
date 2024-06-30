@@ -52,7 +52,6 @@ CREATE TABLE CDPs (
     ClienteID INT NOT NULL,
     Monto FLOAT NOT NULL,
     DenominacionID INT NOT NULL,
-    TiempoTotal FLOAT NOT NULL,
     Interes FLOAT NOT NULL,
     FechaIngreso DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FechaExpiracion DATETIME NOT NULL,
@@ -60,7 +59,6 @@ CREATE TABLE CDPs (
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ID),
     FOREIGN KEY (DenominacionID) REFERENCES Denominaciones(ID)
 );
-
 
 CREATE TABLE TipoTransaccion (
 	ID INT AUTO_INCREMENT PRIMARY KEY,

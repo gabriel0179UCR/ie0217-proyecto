@@ -161,3 +161,14 @@ int callback_Get_Interest_Loan(void *data, int argc, char **argv, char **azColNa
   *result = stof(argv[0]);
   return 0;
 };
+
+//! Declaracion de la funcion callback para el metodo que crea CDPs
+int callback_CDP(void *data, int argc, char **argv, char **azColName) {
+  cout << endl << "CDP creado" << endl;
+  for (int i = 0; i < argc; i++) {
+    cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << " | ";
+  }
+  cout << endl;
+
+  return 0;
+};

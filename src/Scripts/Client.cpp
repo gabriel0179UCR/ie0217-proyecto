@@ -6,6 +6,7 @@
 #include "Manage_SQL_Queries.hpp"
 #include "Client.hpp"
 #include "SQL_Script_Names.hpp"
+using namespace std;
 
 //! Definicion de la funcion createNewClient que permite crear un nuevo cliente en la base de datos
 int createNewClient(sqlite3 *db, string nombre) {
@@ -227,4 +228,21 @@ float getInterest(sqlite3 *db, string loanType) {
     } else {
         return data;
     }
+};
+
+//! Declaracion del metodo que permite crear un CDP
+void Client::cdp(sqlite3 *db,  string denominationQuantity, float quantity, string expiredDate) {
+    char *errMsg = 0;
+    int rc;
+    string query = read_sql_file(CDP);
+    query = regex_replace(query, regex("\\{0\\}"), to_string(id));
+    query = regex_replace(query, regex("\\{1\\}"), to_string(quantity)); 
+    query = regex_replace(query, regex("\\{2\\}"), denominationQuantity); 
+    query = regex_replace(query, regex("\\{3\\}"), expiredDate);
+    const char *sql = query.c_str();
+    rc = sqlite3_exec(db, sql, callback_CDP, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        cerr << "SQL error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+    } 
 };

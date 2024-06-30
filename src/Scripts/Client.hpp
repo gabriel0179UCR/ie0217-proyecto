@@ -35,6 +35,9 @@ class Client {
 
         //! Declaracion del metodo que permite abonar dinero a un prestamo
         void loan_payment(sqlite3 *db, int loanID, string denominationDST, string denominationQuantity, float quantity);
+
+        //! Declaracion del metodo que permite crear un CDP
+        void cdp(sqlite3 *db,  string denominationQuantity, float quantity, string expiredDate);
         
 };
 
