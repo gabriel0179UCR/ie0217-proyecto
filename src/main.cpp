@@ -33,6 +33,7 @@ enum LoanOptions {
     EXITLOANMENU
 };
 
+// Menu principal
 int main_menu(){
     int option;
     // Menu principal
@@ -41,11 +42,22 @@ int main_menu(){
     cout << "2. Agregar cliente" << endl;
     cout << "3. Salir" << endl;
     cout << "Ingrese su opcion: ";
-    cin >> option;
+    try {
+        cin >> option;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(100, '\n');
+            throw "Valor ingresado no es numerico";
+        }
+    } catch (const char* msg) {
+        cout << msg << endl;
+        option = -1;
+    }
 
     return option;
 };
 
+// Menu secundario
 int secundary_menu(){
     int option;
     cout << endl << "///// Acciones /////" << endl;
@@ -58,22 +70,42 @@ int secundary_menu(){
     cout << "7. Salir al menu principal" << endl;
 
     cout << "Ingrese su opcion: ";
-    cin >> option;
+    try {
+        cin >> option;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(100, '\n');
+            throw "Valor ingresado no es numerico";
+        }
+    } catch (const char* msg) {
+        cout << msg << endl;
+        option = -1;
+    }
 
     return option;
 };
 
+// Menu de prestamos
 int loan_menu(){
     int option;
-    cout << endl << "///// Acciones /////" << endl;
+    cout << endl << "///// Menu de prestamos /////" << endl;
     cout << "1. Informacion general de prestamos" << endl;
     cout << "2. Solicitar prestamo" << endl;
     cout << "3. Abonar dinero a un prestamo" << endl;
-    cout << "4. Solicitar reporte de prestamos" << endl;
-    cout << "5. Salir al menu secundario" << endl;
+    cout << "4. Salir al menu secundario" << endl;
 
     cout << "Ingrese su opcion: ";
-    cin >> option;
+    try {
+        cin >> option;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(100, '\n');
+            throw "Valor ingresado no es numerico";
+        }
+    } catch (const char* msg) {
+        cout << msg << endl;
+        option = -1;
+    }
 
     return option;
 }
@@ -94,6 +126,7 @@ int main() {
     string denominationQuantity;
     int fee;
     int loanID;
+    string expiredDate;
 
     sqlite3 *db;
     int rc;
@@ -107,8 +140,18 @@ int main() {
         {
         case ENTERCLIENT:
             cout << "Ingrese el ID del cliente: ";
-            cin >> clientID;
             exitSecundaryMenu = false;
+            try {
+                cin >> clientID;
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(100, '\n');
+                    throw "Valor ingresado no es numerico";
+                }
+            } catch (const char* msg) {
+                cout << msg << endl;
+                option = -1;
+            }
             break;
         case ADDCLIENT:
             cout << "Agregue el nombre del cliente: ";
@@ -135,8 +178,6 @@ int main() {
 
             // Menu secundario
             option = secundary_menu();
-
-            
 
             switch (option)
             {
@@ -216,8 +257,6 @@ int main() {
                         cin >> quantity;
 
                         client.loan_payment(db, loanID, denominationDST, denominationQuantity, quantity);
-                    case LOANS_REGISTER:
-                        break;
                     case EXITLOANMENU:
                         exitLoanMenu = true;
                         break;
@@ -225,16 +264,23 @@ int main() {
                         cout << "Opcion incorrecta" << endl;
                     }
                 }
-
                 break;
-
             case CDP:
+                cout << "Ingrese la denominacion de la cantidad: ";
+                cin >> denominationQuantity;
+                cout << "Ingrese la cantidad: ";
+                cin >> quantity;
+                cout << "Ingrese la fecha de expiracion: ";
+                cin >> expiredDate;
+
+                client.cdp(db, denominationQuantity, quantity, expiredDate);
                 break;
-            
             case EXITSECUNDARY:
                 cout << "Saliendo al menu principal" << endl;
                 exitSecundaryMenu = true;
                 break;
+            default:
+                cout << "Opcion incorrecta" << endl;
             }
         }
     }
