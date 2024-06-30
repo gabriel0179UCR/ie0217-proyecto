@@ -149,3 +149,11 @@ int callback_Loan_Payment(void *data, int argc, char **argv, char **azColName) {
 
   return 0;
 };
+
+
+//! Definicion de la funcion callback para la funcion que consulta el interes de un prestamo
+int callback_Get_Interest_Loan(void *data, int argc, char **argv, char **azColName){
+  float* result = static_cast<float *>(data);
+  *result = stof(argv[0]);
+  return 0;
+};

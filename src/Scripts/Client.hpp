@@ -44,4 +44,7 @@ int createNewClient(sqlite3 *db, string nombre);
 //! Declaracion de la funcion que consulta la informacion de prestamos
 void getLoansTypes(sqlite3 *db);
 
+//! Declaracion de la funcion que consulta el interes de un tipo de prestamo
+float getInterest(sqlite3 *db, string loanType);
+
 #endif // CLIENT_HPP

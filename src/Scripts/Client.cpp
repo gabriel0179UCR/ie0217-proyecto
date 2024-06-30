@@ -2,6 +2,7 @@
 #include <sqlite3.h>
 #include <string>
 #include <regex>
+#include <math.h>
 #include "Manage_SQL_Queries.hpp"
 #include "Client.hpp"
 #include "SQL_Script_Names.hpp"
@@ -167,7 +168,16 @@ void Client::loan(sqlite3 *db, string loanType, string denomination, float quant
     if (rc != SQLITE_OK) {
         cerr << "SQL error: " << errMsg << endl;
         sqlite3_free(errMsg);
-    }  
+    } 
+
+    float interest = getInterest(db, loanType);
+    float totalPayment = 0;
+    cout << endl << "Tabla de pagos" << endl;
+    cout << endl << "Monto" << "| Numero de cuota |" << "Interes" << endl;
+    for (int i=0; i<fee*12; i++) {
+        totalPayment = totalPayment + (1+interest/100)*quantity/(fee*12);
+        cout << to_string(std::round(totalPayment*100.0f)/100.0f) << " | " << i+1 << " | " << interest << endl;
+    }
 };
 
 //! Definicion del metodo que abona dinero a un prestamo
@@ -197,4 +207,24 @@ void getLoansTypes(sqlite3 *db) {
         cerr << "SQL error: " << errMsg << endl;
         sqlite3_free(errMsg);
     } 
+};
+
+//! Definicion de la funcion que consulta el interes de un tipo de prestamo
+float getInterest(sqlite3 *db, string loanType) {
+    float data;
+    char *errMsg = 0;
+    int rc;
+    string query;
+    const char *sql;
+    query = read_sql_file(GET_INTEREST_LOAN);
+    query = regex_replace(query, regex("\\{0\\}"), loanType);
+    sql = query.c_str();
+    rc = sqlite3_exec(db, sql, callback_Get_Interest_Loan, &data, &errMsg);
+    if (rc != SQLITE_OK) {
+        cerr << "SQL error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+        return 0;
+    } else {
+        return data;
+    }
 };

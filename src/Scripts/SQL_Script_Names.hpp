@@ -40,4 +40,7 @@ const string LOAN = ".\\SQL_Scripts\\Loan.sql";
 //! Codigo de SQL que se encarga de abonar dinero en prestamos
 const string LOAN_PAYMENT = ".\\SQL_Scripts\\Loan_Payment.sql";
 
+//! Codigo de SQL que se encarga de consultar el interes de un tipo de prestamo
+const string GET_INTEREST_LOAN = ".\\SQL_Scripts\\Get_Interest_Loan.sql";
+
 #endif // SQLSCRIPTNAMES_HPP
