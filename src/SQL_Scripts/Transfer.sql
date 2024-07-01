@@ -14,14 +14,14 @@ Parametros:
 */
 
 -- Se actualiza la cantidad en la cuenta fuente
-UPDATE Cuentas SET Cantidad = Cantidad + {2} 
+UPDATE Cuentas SET Cantidad = Cantidad - {2} 
 WHERE ClientesID = {0} 
     AND DenominacionID = (
         SELECT ID FROM Denominaciones WHERE Denominacion = '{4}'
     );
 
 -- Se actualiza la cantidad en la cuenta destino
-UPDATE Cuentas SET Cantidad = Cantidad - {3}
+UPDATE Cuentas SET Cantidad = Cantidad + {3}
 WHERE ClientesID = {1} 
     AND DenominacionID = (
         SELECT ID FROM Denominaciones WHERE Denominacion = '{5}'

@@ -21,16 +21,18 @@ VALUES (
 );
 
 -- Se crea la cuenta: Colones
-INSERT INTO Cuentas (ClientesID, DenominacionID, Cantidad)
+INSERT INTO Cuentas (ID, ClientesID, DenominacionID, Cantidad)
 VALUES (
+    (SELECT COALESCE(MAX(ID), 0) + 1 FROM Cuentas),
     (SELECT MAX(ID) FROM Clientes WHERE Nombre = '{0}'),
     1,
     0
 );
 
 -- Se crea la cuenta: Dolares
-INSERT INTO Cuentas (ClientesID, DenominacionID, Cantidad)
+INSERT INTO Cuentas (ID, ClientesID, DenominacionID, Cantidad)
 VALUES (
+    (SELECT COALESCE(MAX(ID), 0) + 1 FROM Cuentas),
     (SELECT MAX(ID) FROM Clientes WHERE Nombre = '{0}'),
     2,
     0
